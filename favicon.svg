@@ -6,14 +6,11 @@
     </linearGradient>
   </defs>
 
-  <!-- Background circle -->
-  <circle cx="32" cy="32" r="30" fill="url(#grad)"/>
-
-  <!-- Bold W letter with rounded edges -->
-  <path d="M 14 20 L 20 44 Q 20.5 46 22.5 46 Q 24.5 46 25 44 L 32 26 L 39 44 Q 39.5 46 41.5 46 Q 43.5 46 44 44 L 50 20 Q 50.5 18 49 18 Q 47.5 18 47 20 L 42.5 38 L 36.5 22 Q 36 20 34 20 L 30 20 Q 28 20 27.5 22 L 21.5 38 L 17 20 Q 16.5 18 15 18 Q 13.5 18 14 20 Z"
-        fill="#fff"
-        stroke="#fff"
-        stroke-width="0.5"
+  <!-- Stylized cartoonish W with curves and bounce -->
+  <path d="M 6 12 Q 8 10 10 12 L 16 48 Q 17 52 20 52 Q 23 52 24 48 L 32 22 L 40 48 Q 41 52 44 52 Q 47 52 48 48 L 54 12 Q 56 10 58 12 Q 60 14 58 16 L 50 54 Q 49 58 44 58 Q 39 58 38 54 L 32 32 L 26 54 Q 25 58 20 58 Q 15 58 14 54 L 6 16 Q 4 14 6 12 Z"
+        fill="url(#grad)"
+        stroke="url(#grad)"
+        stroke-width="1"
         stroke-linejoin="round"
         stroke-linecap="round"/>
 </svg>
