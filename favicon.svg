@@ -6,11 +6,13 @@
     </linearGradient>
   </defs>
 
-  <!-- Stylized cartoonish W with curves and bounce -->
-  <path d="M 6 12 Q 8 10 10 12 L 16 48 Q 17 52 20 52 Q 23 52 24 48 L 32 22 L 40 48 Q 41 52 44 52 Q 47 52 48 48 L 54 12 Q 56 10 58 12 Q 60 14 58 16 L 50 54 Q 49 58 44 58 Q 39 58 38 54 L 32 32 L 26 54 Q 25 58 20 58 Q 15 58 14 54 L 6 16 Q 4 14 6 12 Z"
+  <!-- Thick asymmetrical W - left side -->
+  <path d="M 4 8 Q 6 6 9 8 Q 10 9 10.5 11 L 18 50 Q 19 55 23 55 Q 26 55 27 51 L 33 24 L 38 48 Q 39 53 43 54 Q 47 54 49 50 L 57 14 Q 58 11 60 12 Q 62 15 60 18 L 51 56 Q 50 60 45 60 Q 40 60 38 56 L 33 35 L 28 55 Q 27 60 22 60 Q 16 60 14 55 L 4 14 Q 2 10 4 8 Z"
         fill="url(#grad)"
-        stroke="url(#grad)"
-        stroke-width="1"
-        stroke-linejoin="round"
-        stroke-linecap="round"/>
+        stroke="none"/>
+
+  <!-- Extra thickness on right stroke -->
+  <path d="M 56 12 L 60 11 L 52 56 Q 51 59 47 60 L 45 60 Q 49 60 50 56 L 58 13 Z"
+        fill="url(#grad)"
+        opacity="0.8"/>
 </svg>
