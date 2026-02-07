@@ -6,20 +6,20 @@
     </linearGradient>
   </defs>
 
-  <!-- Thick cursive brush-stroke W - all strokes THICK and equal -->
-  <!-- Left stroke - EXTRA THICK -->
-  <path d="M 0 4 L 2 0 L 8 0 Q 12 1 15 4 Q 18 7 19 12 L 26 52 Q 27 57 31 59 Q 35 59 37 55 L 38 50 L 28 52 Q 23 52 22 48 L 22 46 L 15 10 Q 13 5 9 3 Q 5 2 2 3 L 0 4 Z"
+  <!-- Thick cursive brush-stroke W - all strokes equally THICK -->
+  <!-- Left outer stroke - THICKER to match middle strokes -->
+  <path d="M 0 4 L 1 1 L 2 0 L 10 0 Q 14 1 17 4 Q 20 7 21 12 L 28 52 Q 29 58 33 60 Q 38 60 40 56 L 41 50 L 30 53 Q 24 53 23 48 L 23 46 L 16 10 Q 14 5 10 3 Q 6 2 3 3 L 1 4 L 0 4 Z"
         fill="url(#grad)"/>
 
-  <!-- Left middle peak - THICK -->
-  <path d="M 26 50 L 34 18 Q 35 13 39 12 Q 43 12 45 16 L 38 48 Q 37 53 32 55 Q 28 55 26 52 L 26 50 Z"
+  <!-- Left middle peak -->
+  <path d="M 27 50 L 25 52 L 34 18 Q 35 13 39 12 Q 43 12 45 16 L 38 48 Q 37 53 32 55 Q 28 55 27 52 L 27 50 Z"
         fill="url(#grad)"/>
 
-  <!-- Right middle valley - THICK -->
+  <!-- Right middle valley -->
   <path d="M 34 20 L 41 16 Q 45 15 47 18 L 52 50 Q 53 55 48 58 Q 44 59 42 56 L 40 54 L 36 52 L 34 38 L 34 20 Z"
         fill="url(#grad)"/>
 
-  <!-- Right stroke - THICK -->
-  <path d="M 51 50 L 57 16 Q 58 10 61 7 Q 64 5 64 9 Q 64 13 63 17 L 57 56 Q 56 62 51 63 Q 46 63 44 59 L 42 54 L 48 56 Q 52 56 53 51 L 51 50 Z"
+  <!-- Right outer stroke - THICKER to match middle strokes -->
+  <path d="M 50 50 L 49 52 L 56 16 Q 57 9 60 6 Q 62 4 64 5 L 64 8 Q 64 11 63 15 L 58 56 Q 57 62 52 64 Q 46 64 44 60 L 43 57 L 42 54 L 49 57 Q 53 57 54 52 L 50 50 Z"
         fill="url(#grad)"/>
 </svg>
