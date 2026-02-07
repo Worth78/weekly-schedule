@@ -42,7 +42,7 @@ Use this when you're on vacation, taking a break, or don't need the schedule not
 2. Tap **Calendars** at the bottom
 3. Find **"Weekly Schedule"** under the Subscribed section
 4. Tap the **(i)** next to it
-5. Scroll down and tap **Delete Calendar**
+5. Scroll down and tap **Unsubscribe**
 6. Confirm when prompted
 
 All schedule events and notifications are removed immediately. No data is lost — the calendar lives on GitHub Pages and can be re-added anytime.
