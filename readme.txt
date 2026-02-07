@@ -5,8 +5,7 @@ claude-smart   # "Debug why my 0DTE bot double-enters positions"
 claude-max     # "Analyze my entire codebase and optimize the backtesting system"
 
 I made some changes in the code.  Please
-use agent "C:\Users\worth\.claude\agents\git-agent.md" 
-to PUSH ALL CHANGES TO GIT. Make sure you push all 
+ PUSH ALL CHANGES TO GITHUB. Make sure you push all 
 changes, as I've had other conversations going on 
 with different AIs.
 
