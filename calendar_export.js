@@ -164,13 +164,14 @@ document.addEventListener('DOMContentLoaded', function() {
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         `;
 
-        const infoBtn = document.createElement('button');
-        infoBtn.textContent = 'Setup Auto-Sync';
-        infoBtn.onclick = () => alert('To auto-sync your calendar:\\n\\n1. Host this on GitHub Pages\\n2. Subscribe to the .ics URL in Apple Calendar\\n3. Changes refresh automatically\\n\\nSee iphone_integration.md for details!');
-        infoBtn.style.cssText = `
+        const subscribeLink = document.createElement('a');
+        subscribeLink.textContent = 'Subscribe (Auto-Sync)';
+        subscribeLink.href = 'webcal://worth78.github.io/weekly-schedule/weekly_schedule.ics';
+        subscribeLink.style.cssText = `
+            display: inline-block;
             background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
             color: white;
-            border: none;
+            text-decoration: none;
             padding: 15px 30px;
             font-size: 1.1rem;
             font-weight: 600;
@@ -180,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
 
         btnContainer.appendChild(downloadBtn);
-        btnContainer.appendChild(infoBtn);
+        btnContainer.appendChild(subscribeLink);
         header.appendChild(btnContainer);
     }
 });
