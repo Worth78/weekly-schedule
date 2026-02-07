@@ -32,12 +32,32 @@ meal plans, and routines.
 
 Calendar auto-refreshes when the schedule is updated and pushed.
 
-### Unsubscribe
+## Remove & Re-Add Calendar on iPhone
+
+### Remove (Unsubscribe)
+
+Use this when you're on vacation, taking a break, or don't need the schedule notifications for a while.
 
 1. Open the **Calendar** app
 2. Tap **Calendars** at the bottom
-3. Tap the **(i)** next to "Weekly Schedule"
-4. Scroll down and tap **Delete Calendar**
+3. Find **"Weekly Schedule"** under the Subscribed section
+4. Tap the **(i)** next to it
+5. Scroll down and tap **Delete Calendar**
+6. Confirm when prompted
+
+All schedule events and notifications are removed immediately. No data is lost — the calendar lives on GitHub Pages and can be re-added anytime.
+
+### Re-Add (Re-Subscribe)
+
+When you're ready to get back on the schedule:
+
+1. Visit the [live schedule](https://worth78.github.io/weekly-schedule/weekly_schedule.html) on your iPhone
+2. Tap the green **Subscribe to Calendar** button
+3. Confirm in the Calendar dialog
+
+Or scan the QR code on the page with your iPhone camera.
+
+That's it — all events and reminders are back instantly. The calendar auto-syncs whenever the schedule is updated.
 
 ## Files
 
