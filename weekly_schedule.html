@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Schedule — Disciplined Trader's Life</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2c5282;
+            --accent: #ed8936;
+            --success: #38a169;
+            --bg-light: #f7fafc;
+            --bg-card: #ffffff;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .philosophy {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 10px 20px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 20px 25px;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        h2 {
+            color: var(--primary);
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        h3 {
+            color: var(--secondary);
+            margin: 25px 0 15px 0;
+        }
+
+        h4 {
+            color: var(--text-primary);
+            margin: 20px 0 10px 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        blockquote {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-left: 4px solid var(--accent);
+            font-style: italic;
+        }
+
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        tr:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        tr:hover {
+            background: #edf2f7;
+        }
+
+        strong {
+            color: var(--primary);
+        }
+
+        em {
+            color: var(--text-secondary);
+        }
+
+        code {
+            background: var(--bg-light);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+        }
+
+        pre {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            margin: 40px 0;
+        }
+
+        .highlight-trading {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%) !important;
+            color: white !important;
+            font-weight: 700;
+        }
+
+        .highlight-coding {
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%) !important;
+            color: white !important;
+            font-weight: 700;
+        }
+
+        .nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .nav-toggle {
+            background: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weekly Schedule — Disciplined Trader's Life</h1>
+        </header>
+
+        <div class="card">
+            <div class="card-body">
+                <h1>Weekly Schedule — Disciplined Trader's Life</h1>
+
+<blockquote><strong>Philosophy:</strong> No wasted time. No mindless scrolling. Every block has purpose.<br>Train like the Greeks — progressive intensity through the week, peak on Saturday, full rest on Sunday.<br>This is a living document. Adjust times as needed, but protect the structure.</blockquote>
+
+<hr>
+
+<h2>Ground Rules</h2>
+
+<ol>
+<li><strong>No mindless scrolling</strong> — phone stays off or in another room during focus blocks</li>
+<li><strong>Brush teeth after eating</strong>, not before</li>
+<li><strong>Close the GUI window, never the console</strong> (SuperTradeBros habit carries into life discipline)</li>
+<li><strong>Coffee/water + snack → Prayer → Brush teeth</strong> — this order every morning, no exceptions</li>
+<li><strong>Shower after the main workout only</strong> (no morning shower on weekdays)</li>
+<li><strong>Dishes immediately after every meal</strong> — never let them pile up</li>
+<li><strong>Screen curfew at 9:00 PM</strong> — only books after this point</li>
+<li><strong>8.5 hours of sleep minimum</strong> — sleep is the #1 trading edge. Rested mind = sharp decisions.</li>
+<li><strong>Sunday is sacred</strong> — rest, church, meal prep, nothing strenuous</li>
+</ol>
+
+<hr>
+
+<h2>Weekly Overview</h2>
+
+<div style="overflow-x: auto;"><table>
+<thead><tr><th>Time Block</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead><tbody>
+<tr><td>7:00-7:55</td><td>Morning routine</td><td>Morning routine</td><td>Morning routine</td><td>Morning routine</td><td>Morning routine</td><td>7:00 AM start</td><td>6:30 AM start</td></tr>
+<tr><td>7:55-8:30</td><td>Breakfast + Pre-market</td><td>Breakfast + Pre-market</td><td>Breakfast + Pre-market</td><td>Breakfast + Pre-market</td><td>Breakfast + Pre-market</td><td>Breakfast + Reading</td><td><strong>Church</strong></td></tr>
+<tr><td>8:30-12:00</td><td class="highlight-trading"><strong>TRADING</strong></td><td class="highlight-trading"><strong>TRADING</strong></td><td class="highlight-trading"><strong>TRADING</strong></td><td class="highlight-trading"><strong>TRADING</strong></td><td class="highlight-trading"><strong>TRADING</strong></td><td>Coding</td><td><strong>Church</strong></td></tr>
+<tr><td>12:00-1:00</td><td>Lunch</td><td>Lunch</td><td>Lunch</td><td>Lunch</td><td>Lunch</td><td>Gym (Peak)</td><td>Brunch + Grocery</td></tr>
+<tr><td>1:00-4:15</td><td class="highlight-coding"><strong>CODING</strong></td><td class="highlight-coding"><strong>CODING</strong></td><td class="highlight-coding"><strong>CODING</strong></td><td class="highlight-coding"><strong>CODING</strong></td><td class="highlight-coding"><strong>CODING</strong></td><td>Lunch + Projects</td><td><strong>Meal Prep</strong></td></tr>
+<tr><td>4:15-6:15</td><td>Workout + Shower</td><td>Workout + Shower</td><td>Workout + Shower</td><td>Workout + Shower</td><td>Workout + Shower</td><td>Free time</td><td>Free time</td></tr>
+<tr><td>6:15-7:00</td><td>Dinner</td><td><strong>Early dinner</strong></td><td>Dinner</td><td>Dinner</td><td>Dinner</td><td>Dinner</td><td>Dinner</td></tr>
+<tr><td>7:00-7:30</td><td>Market analysis</td><td><strong>Algo Class</strong></td><td>Market analysis</td><td>Market analysis</td><td>Market analysis</td><td>Weekly review</td><td>Weekly planning</td></tr>
+<tr><td>7:30-9:00</td><td>Free/productive</td><td><strong>Algo Class</strong></td><td>Free/productive</td><td>Free/productive</td><td>Free/productive</td><td>Free time</td><td>Free time</td></tr>
+<tr><td>9:00-9:45</td><td>Wind down</td><td>—</td><td>Wind down</td><td>Wind down</td><td>Wind down</td><td>Wind down</td><td>Wind down</td></tr>
+<tr><td><strong>9:45</strong></td><td><strong>LIGHTS OUT</strong></td><td><strong>10:30 LIGHTS OUT</strong></td><td><strong>LIGHTS OUT</strong></td><td><strong>LIGHTS OUT</strong></td><td><strong>LIGHTS OUT</strong></td><td><strong>LIGHTS OUT</strong></td><td><strong>LIGHTS OUT</strong></td></tr>
+</tbody></table></div>
+
+<hr>
+
+<h2>Training Philosophy — Greek Periodization</h2>
+
+<p>Inspired by the ancient Greek tetrad system, adapted to a modern 6-day week:</p>
+
+<div style="overflow-x: auto;"><table>
+<thead><tr><th>Day</th><th>Intensity</th><th>Location</th><th>Focus</th></tr></thead><tbody>
+<tr><td>Monday</td><td><strong>Light (50%)</strong></td><td>Home</td><td>Upper push + pull-ups — wake the body up</td></tr>
+<tr><td>Tuesday</td><td><strong>Light-Moderate (60%)</strong></td><td>Home</td><td>Lower body calisthenics — build the legs</td></tr>
+<tr><td>Wednesday</td><td><strong>Moderate (70%)</strong></td><td>Commercial Gym</td><td>Upper body compound lifts</td></tr>
+<tr><td>Thursday</td><td><strong>Moderate-Heavy (75%)</strong></td><td>Home</td><td>Full body calisthenics + skills</td></tr>
+<tr><td>Friday</td><td><strong>Heavy (85%)</strong></td><td>Commercial Gym</td><td>Lower body + heavy pulls</td></tr>
+<tr><td>Saturday</td><td><strong>Peak (95%)</strong></td><td>Commercial Gym</td><td>Full body power — week's climax</td></tr>
+<tr><td>Sunday</td><td><strong>Rest (0%)</strong></td><td>—</td><td>Complete recovery, light walk only</td></tr>
+</tbody></table></div>
+
+<hr>
+
+<h2>Morning Yoga Flow (15 minutes) — Daily</h2>
+
+<p>Do this same flow every morning. It becomes meditative through repetition.</p>
+
+<div style="overflow-x: auto;"><table>
+<thead><tr><th>#</th><th>Pose</th><th>Duration</th><th>Notes</th></tr></thead><tbody>
+<tr><td>1</td><td>Mountain Pose (Tadasana)</td><td>30 sec</td><td>Stand tall, ground through feet, set intention</td></tr>
+<tr><td>2</td><td>Sun Salutation A</td><td>5 min (3 rounds)</td><td>Flow: forward fold → plank → chaturanga → up dog → down dog</td></tr>
+<tr><td>3</td><td>Warrior I (each side)</td><td>1 min each</td><td>Deep lunge, arms overhead, open chest</td></tr>
+<tr><td>4</td><td>Warrior II (each side)</td><td>1 min each</td><td>Wide stance, arms extended, gaze over front hand</td></tr>
+<tr><td>5</td><td>Triangle Pose (each side)</td><td>30 sec each</td><td>Extend and reach, open the side body</td></tr>
+<tr><td>6</td><td>Standing Forward Fold</td><td>1 min</td><td>Let head hang heavy, release the spine</td></tr>
+<tr><td>7</td><td>Cat-Cow</td><td>1 min (10 rounds)</td><td>On all fours, sync breath with movement</td></tr>
+<tr><td>8</td><td>Child's Pose</td><td>1 min</td><td>Knees wide, arms extended, forehead to mat</td></tr>
+<tr><td>9</td><td>Seated Twist (each side)</td><td>30 sec each</td><td>Gentle spinal rotation</td></tr>
+<tr><td>10</td><td>Savasana</td><td>1 min</td><td>Flat on back, eyes closed, full release</td></tr>
+</tbody></table></div>
+
+<hr>
+
+<h2>Evening Yoga Flow (10 minutes) — Daily</h2>
+
+<p>Wind-down flow. Slow, deep breaths. No effort. Let gravity do the work.</p>
+
+<div style="overflow-x: auto;"><table>
+<thead><tr><th>#</th><th>Pose</th><th>Duration</th><th>Notes</th></tr></thead><tbody>
+<tr><td>1</td><td>Seated Forward Fold</td><td>1 min</td><td>Legs extended, fold from hips, relax neck</td></tr>
+<tr><td>2</td><td>Supine Twist (each side)</td><td>1 min each</td><td>Knees fall to one side, arms in T</td></tr>
+<tr><td>3</td><td>Happy Baby</td><td>1 min</td><td>On back, grab feet, rock gently side to side</td></tr>
+<tr><td>4</td><td>Legs Up the Wall</td><td>2 min</td><td>Scoot hips to wall, legs vertical, close eyes</td></tr>
+<tr><td>5</td><td>Pigeon Pose (each side)</td><td>1 min each</td><td>Deep hip opener, fold forward over front leg</td></tr>
+<tr><td>6</td><td>Child's Pose</td><td>1 min</td><td>Final rest before savasana</td></tr>
+<tr><td>7</td><td>Savasana</td><td>1 min</td><td>Full stillness, deep belly breaths, let go of the day</td></tr>
+</tbody></table></div>
+
+<hr>
+
+<h2>Detailed Daily Schedules</h2>
+
+<hr>
+
+<h3>MONDAY — Light Training Day (Home)</h3>
+
+<div style="overflow-x: auto;"><table>
+<thead><tr><th>Time</th><th>Block</th><th>Details</th></tr></thead><tbody>
+<tr><td><strong>7:00 AM</strong></td><td><strong>Wake up</strong></td><td>Alarm off immediately. Feet on floor. Make bed (1 min).</td></tr>
+<tr><td>7:02</td><td>Water + Coffee + Snack</td><td>Glass of water first. Start coffee. Eat a banana or handful of almonds.</td></tr>
+<tr><td>7:15</td><td>Prayer</td><td>10 minutes. Quiet, focused, no phone.</td></tr>
+<tr><td>7:25</td><td>Brush teeth + wash face</td><td>After food. Floss. Cold water on face.</td></tr>
+<tr><td>7:35</td><td>Morning yoga</td><td>15-minute flow (see above). On the mat, no distractions.</td></tr>
+<tr><td><strong>7:50</strong></td><td><strong>Get dressed</strong></td><td>Comfortable clothes for the day. No gym clothes yet.</td></tr>
+<tr><td>7:55</td><td>Breakfast</td><td>Quick breakfast. ~15 minutes.</td></tr>
+<tr><td>8:10</td><td>Dishes + kitchen cleanup</td><td>Quick cleanup. 5 min.</td></tr>
+<tr><td>8:15</td><td>Pre-market prep</td><td>Review watchlist, overnight news, set price alerts. Check futures.</td></tr>
+<tr><td>8:25</td><td>Final setup</td><td>SuperTradeBros open, charts configured, scanners running.</td></tr>
+<tr><td><strong>8:30</strong></td><td class="highlight-trading"><strong>TRADING SESSION</strong></td><td>Full focus. Execute the plan. Log all trades.</td></tr>
+<tr><td>10:30</td><td>Mid-morning water break</td><td>5 min. Refill water. Stand up. Stretch neck and shoulders.</td></tr>
+<tr><td><strong>12:00</strong></td><td><strong>Trading session ends</strong></td><td>Close scanners. Log final notes in trading journal.</td></tr>
+<tr><td>12:05</td><td>Lunch</td><td>Heat/prep and eat (see meal plan). ~25 minutes.</td></tr>
+<tr><td>12:30</td><td>Dishes + brush teeth</td><td>Clean up kitchen. Brush teeth. 10 min.</td></tr>
+<tr><td><strong>12:45</strong></td><td class="highlight-coding"><strong>CODING SESSION</strong></td><td>SuperTradeBros development, algorithm work, or study.</td></tr>
+<tr><td>2:00</td><td>Coding break</td><td>10 min. Water. Walk around. Rest eyes.</td></tr>
+<tr><td>2:10</td><td>Coding session continues</td><td>Deep work until 4:15.</td></tr>
+<tr><td><strong>4:15</strong></td><td><strong>Pre-workout</strong></td><td>Snack (apple + peanut butter). Change into workout clothes. Fill water bottle.</td></tr>
+<tr><td><strong>4:30</strong></td><td><strong>WORKOUT — Light Upper + Pull-ups (Home)</strong></td><td>See workout program below. ~45 min.</td></tr>
+<tr><td>5:15</td><td>Cool down + stretch</td><td>5 min light stretching. Slow breathing.</td></tr>
+<tr><td>5:20</td><td>Shower</td><td>Full shower. Clean up. Get into evening clothes.</td></tr>
+<tr><td>5:40</td><td>Tidy up workout area</td><td>Put away any equipment. Wipe down mat.</td></tr>
+<tr><td><strong>5:45</strong></td><td><strong>Dinner prep + cook</strong></td><td>See meal plan. Simple meals, 20-30 min.</td></tr>
+<tr><td>6:15</td><td>Eat dinner</td><td>Sit down. No screens. Enjoy the food.</td></tr>
+<tr><td>6:35</td><td>Dishes + kitchen cleanup</td><td>Everything washed, dried, put away. Wipe counters.</td></tr>
+<tr><td>6:45</td><td>Brush teeth</td><td>After dinner. Full brush + floss.</td></tr>
+<tr><td><strong>6:55</strong></td><td><strong>Evening market analysis</strong></td><td>30 min. Review today's market action. Prep watchlist for tomorrow.</td></tr>
+<tr><td>7:25</td><td>Next-day prep</td><td>Lay out tomorrow's clothes. Pack gym bag if needed. Check calendar.</td></tr>
+<tr><td><strong>7:40</strong></td><td><strong>Free / productive time</strong></td><td>Personal projects, hobbies, phone calls, errands. NO mindless scrolling.</td></tr>
+<tr><td>8:25</td><td>Tidy living space</td><td>15 min. Pick up, wipe surfaces, take out trash if needed.</td></tr>
+<tr><td>8:40</td><td>Prep tomorrow's breakfast items</td><td>Set out oats, thaw protein, whatever's needed. Light snack if hungry.</td></tr>
+<tr><td><strong>9:00</strong></td><td><strong>SCREEN CURFEW</strong></td><td>All screens off. Phone on charger in another room.</td></tr>
+<tr><td>9:00</td><td>Evening yoga</td><td>10-minute wind-down flow (see above).</td></tr>
+<tr><td>9:10</td><td>Reading</td><td>25 minutes. Physical book in bed or a comfortable chair.</td></tr>
+<tr><td>9:35</td><td>Brush teeth + bed prep</td><td>Brush, floss. Set alarm.</td></tr>
+<tr><td><strong>9:45</strong></td><td><strong>LIGHTS OUT</strong></td><td>No exceptions. 9+ hours of sleep. Trading edge starts here.</td></tr>
+</tbody></table></div>
+
+<hr>
+
+<h3>TUESDAY — Light-Moderate Leg Day (Home) + Algo Class</h3>
+
+<blockquote><strong>Note:</strong> Algo class 6:00-10:00 PM. Dinner is early. Evening routine compressed.</blockquote>
+
+<div style="overflow-x: auto;"><table>
+<thead><tr><th>Time</th><th>Block</th><th>Details</th></tr></thead><tbody>
+<tr><td><strong>7:00 AM</strong></td><td><strong>Wake up</strong></td><td>Alarm off. Feet on floor. Make bed.</td></tr>
+<tr><td>7:02</td><td>Water + Coffee + Snack</td><td>Water first. Coffee brewing. Handful of almonds + a few dates.</td></tr>
+<tr><td>7:15</td><td>Prayer</td><td>10 minutes.</td></tr>
+<tr><td>7:25</td><td>Brush teeth + wash face</td><td>After food.</td></tr>
+<tr><td>7:35</td><td>Morning yoga</td><td>15-minute flow.</td></tr>
+<tr><td><strong>7:50</strong></td><td><strong>Get dressed</strong></td><td></td></tr>
+<tr><td>7:55</td><td>Breakfast</td><td>Quick breakfast.</td></tr>
+<tr><td>8:10</td><td>Dishes + kitchen cleanup</td><td></td></tr>
+<tr><td>8:15</td><td>Pre-market prep</td><td>Watchlist, news, alerts.</td></tr>
+<tr><td>8:25</td><td>Final trading setup</td><td></td></tr>
+<tr><td><strong>8:30</strong></td><td class="highlight-trading"><strong>TRADING SESSION</strong></td><td></td></tr>
+<tr><td>10:30</td><td>Water break</td><td>5 min.</td></tr>
+<tr><td><strong>12:00</strong></td><td><strong>Trading session ends</strong></td><td>Log notes.</td></tr>
+<tr><td>12:05</td><td>Lunch</td><td></td></tr>
+<tr><td>12:30</td><td>Dishes + brush teeth</td><td></td></tr>
+<tr><td><strong>12:45</strong></td><td class="highlight-coding"><strong>CODING SESSION</strong></td><td></td></tr>
+<tr><td>2:00</td><td>Coding break</td><td>10 min.</td></tr>
+<tr><td>2:10</td><td>Coding continues</td><td></td></tr>
+<tr><td><strong>3:15</strong></td><td><strong>Pre-workout</strong></td><td>Snack + change clothes.</td></tr>
+<tr><td><strong>3:30</strong></td><td><strong>WORKOUT — Light-Moderate Legs (Home)</strong></td><td>See workout program. ~50 min.</td></tr>
+<tr><td>4:20</td><td>Cool down + stretch</td><td></td></tr>
+<tr><td>4:25</td><td>Shower</td><td></td></tr>
+<tr><td>4:45</td><td>Tidy up</td><td></td></tr>
+<tr><td><strong>4:50</strong></td><td><strong>Dinner prep + cook (EARLY)</strong></td><td>Quick meal — needs to be done by 5:30.</td></tr>
+<tr><td>5:10</td><td>Eat dinner</td><td></td></tr>
+<tr><td>5:30</td><td>Dishes + brush teeth</td><td>Everything clean before leaving.</td></tr>
+<tr><td>5:40</td><td>Algo class prep</td><td>Gather notes, laptop, materials.</td></tr>
+<tr><td><strong>5:50</strong></td><td><strong>Travel to algo class</strong></td><td></td></tr>
+<tr><td><strong>6:00-10:00</strong></td><td><strong>ALGO CLASS</strong></td><td>Full focus. Take good notes.</td></tr>
+<tr><td><strong>~10:10</strong></td><td><strong>Arrive home</strong></td><td></td></tr>
+<tr><td>10:10</td><td>Quick evening yoga</td><td>Abbreviated 5-min version: supine twist + legs up wall + savasana.</td></tr>
+<tr><td>10:20</td><td>Brush teeth + bed prep</td><td></td></tr>
+<tr><td><strong>10:30</strong></td><td><strong>LIGHTS OUT</strong></td><td>~8.5 hrs tonight. Good recovery for Wednesday.</td></tr>
+</tbody></table></div>
+
+<hr>
+
+<h3>WEDNESDAY — Moderate Upper (Commercial Gym)</h3>
+
+<div style="overflow-x: auto;"><table>
+<thead><tr><th>Time</th><th>Block</th><th>Details</th></tr></thead><tbody>
+<tr><td><strong>7:00 AM</strong></td><td><strong>Wake up</strong></td><td>Alarm off. Feet on floor. Make bed.</td></tr>
+<tr><td>7:02</td><td>Water + Coffee + Snack</td><td>Water. Coffee. Banana with peanut butter.</td></tr>
+<tr><td>7:15</td><td>Prayer</td><td>10 minutes.</td></tr>
+<tr><td>7:25</td><td>Brush teeth + wash face</td><td></td></tr>
+<tr><td>7:35</td><td>Morning yoga</td><td>15-minute flow.</td></tr>
+<tr><td><strong>7:50</strong></td><td><strong>Get dressed</strong></td><td></td></tr>
+<tr><td>7:55</td><td>Breakfast</td><td>Quick breakfast.</td></tr>
+<tr><td>8:10</td><td>Dishes + kitchen cleanup</td><td></td></tr>
+<tr><td>8:15</td><td>Pre-market prep</td><td>Extra focus — review Tuesday algo class notes for trading ideas.</td></tr>
+<tr><td>8:25</td><td>Final trading setup</td><td></td></tr>
+<tr><td><strong>8:30</strong></td><td class="highlight-trading"><strong>TRADING SESSION</strong></td><td></td></tr>
+<tr><td>10:30</td><td>Water break</td><td></td></tr>
+<tr><td><strong>12:00</strong></td><td><strong>Trading session ends</strong></td><td></td></tr>
+<tr><td>12:05</td><td>Lunch</td><td></td></tr>
+<tr><td>12:30</td><td>Dishes + brush teeth</td><td></td></tr>
+<tr><td><strong>12:45</strong></td><td class="highlight-coding"><strong>CODING SESSION</strong></td><td></td></tr>
+<tr><td>2:00</td><td>Break</td><td>10 min.</td></tr>
+<tr><td>2:10</td><td>Coding continues</td><td></td></tr>
+<tr><td><strong>4:15</strong></td><td><strong>Pre-workout</strong></td><td>Snack. Change into gym clothes. <strong>Pack gym bag.</strong></td></tr>
+<tr><td>4:25</td><td>Drive to gym</td><td></td></tr>
+<tr><td><strong>4:30</strong></td><td><strong>WORKOUT — Moderate Upper (Commercial Gym)</strong></td><td>See workout program. ~55 min.</td></tr>
+<tr><td>5:25</td><td>Cool down + stretch</td><td>At gym.</td></tr>
+<tr><td>5:30</td><td>Shower at gym or drive home + shower</td><td></td></tr>
+<tr><td>6:00</td><td>Drive home (if showered at gym) / Shower at home</td><td></td></tr>
+<tr><td><strong>6:15</strong></td><td><strong>Dinner prep + cook</strong></td><td></td></tr>
+<tr><td>6:40</td><td>Eat dinner</td><td></td></tr>
+<tr><td>7:00</td><td>Dishes + kitchen cleanup</td><td></td></tr>
+<tr><td>7:10</td><td>Brush teeth</td><td></td></tr>
+<tr><td><strong>7:15</strong></td><td><strong>Evening market analysis</strong></td><td>30 min. Mid-week review — how is the weekly thesis playing out?</td></tr>
+<tr><td>7:45</td><td>Next-day prep</td><td>Clothes, gym bag unpacked/repacked for Friday.</td></tr>
+<tr><td><strong>8:00</strong></td><td><strong>Free / productive time</strong></td><td>Recovery night after Tuesday's late class. Keep it low-key.</td></tr>
+<tr><td>8:25</td><td>Tidy living space</td><td>15 min.</td></tr>
+<tr><td>8:40</td><td>Prep tomorrow's breakfast + light snack</td><td></td></tr>
+<tr><td><strong>9:00</strong></td><td><strong>SCREEN CURFEW</strong></td><td>Extra important tonight — recover sleep debt from Tuesday.</td></tr>
+<tr><td>9:00</td><td>Evening yoga</td><td>10-minute flow.</td></tr>
+<tr><td>9:10</td><td>Reading</td><td>25 minutes.</td></tr>
+<tr><td>9:35</td><td>Brush teeth + bed prep</td><td></td></tr>
+<tr><td><strong>9:45</strong></td><td><strong>LIGHTS OUT</strong></td><td>8.5 hours. Recovering from Tuesday's late night.</td></tr>
+</tbody></table></div>
+
+<hr>
+
+<h3>THURSDAY — Moderate-Heavy Full Body (Home)</h3>
+
+<div style="overflow-x: auto;"><table>
+<thead><tr><th>Time</th><th>Block</th><th>Details</th></tr></thead><tbody>
+<tr><td><strong>7:00 AM</strong></td><td><strong>Wake up</strong></td><td>Make bed.</td></tr>
+<tr><td>7:02</td><td>Water + Coffee + Snack</td><td>Rice cake with honey + almonds.</td></tr>
+<tr><td>7:15</td><td>Prayer</td><td>10 minutes.</td></tr>
+<tr><td>7:25</td><td>Brush teeth + wash face</td><td></td></tr>
+<tr><td>7:35</td><td>Morning yoga</td><td>15-minute flow.</td></tr>
+<tr><td><strong>7:50</strong></td><td><strong>Get dressed</strong></td><td></td></tr>
+<tr><td>7:55</td><td>Breakfast</td><td>Quick breakfast.</td></tr>
+<tr><td>8:10</td><td>Dishes + kitchen cleanup</td><td></td></tr>
+<tr><td>8:15</td><td>Pre-market prep</td><td>Thursday = review positions for end-of-week.</td></tr>
+<tr><td>8:25</td><td>Final setup</td><td></td></tr>
+<tr><td><strong>8:30</strong></td><td class="highlight-trading"><strong>TRADING SESSION</strong></td><td></td></tr>
+<tr><td>10:30</td><td>Water break</td><td></td></tr>
+<tr><td><strong>12:00</strong></td><td><strong>Trading session ends</strong></td><td></td></tr>
+<tr><td>12:05</td><td>Lunch</td><td></td></tr>
+<tr><td>12:30</td><td>Dishes + brush teeth</td><td></td></tr>
+<tr><td><strong>12:45</strong></td><td class="highlight-coding"><strong>CODING SESSION</strong></td><td></td></tr>
+<tr><td>2:00</td><td>Break</td><td></td></tr>
+<tr><td>2:10</td><td>Coding continues</td><td></td></tr>
+<tr><td><strong>4:15</strong></td><td><strong>Pre-workout</strong></td><td>Snack + change.</td></tr>
+<tr><td><strong>4:30</strong></td><td><strong>WORKOUT — Moderate-Heavy Full Body (Home)</strong></td><td>See workout program. ~50 min. Pull-ups, pistol squats, L-sits.</td></tr>
+<tr><td>5:20</td><td>Cool down + stretch</td><td></td></tr>
+<tr><td>5:25</td><td>Shower</td><td></td></tr>
+<tr><td>5:45</td><td>Tidy workout area</td><td></td></tr>
+<tr><td><strong>5:50</strong></td><td><strong>Dinner prep + cook</strong></td><td></td></tr>
+<tr><td>6:15</td><td>Eat dinner</td><td></td></tr>
+<tr><td>6:35</td><td>Dishes + kitchen cleanup</td><td></td></tr>
+<tr><td>6:45</td><td>Brush teeth</td><td></td></tr>
+<tr><td><strong>6:55</strong></td><td><strong>Evening market analysis</strong></td><td>30 min.</td></tr>
+<tr><td>7:25</td><td>Next-day prep</td><td><strong>Pack gym bag for Friday.</strong> Lay out clothes.</td></tr>
+<tr><td><strong>7:40</strong></td><td><strong>Free / productive time</strong></td><td></td></tr>
+<tr><td>8:25</td><td>Tidy living space</td><td>15 min.</td></tr>
+<tr><td>8:40</td><td>Prep tomorrow's breakfast + light snack</td><td></td></tr>
+<tr><td><strong>9:00</strong></td><td><strong>SCREEN CURFEW</strong></td><td></td></tr>
+<tr><td>9:00</td><td>Evening yoga</td><td>10-minute flow.</td></tr>
+<tr><td>9:10</td><td>Reading</td><td>25 minutes.</td></tr>
+<tr><td>9:35</td><td>Brush teeth + bed prep</td><td></td></tr>
+<tr><td><strong>9:45</strong></td><td><strong>LIGHTS OUT</strong></td><td>8.5 hours. Fully rested for Friday's heavy lifting.</td></tr>
+</tbody></table></div>
+
+<hr>
+
+<h3>FRIDAY — Heavy Lower + Pulls (Commercial Gym)</h3>
+
+<div style="overflow-x: auto;"><table>
+<thead><tr><th>Time</th><th>Block</th><th>Details</th></tr></thead><tbody>
+<tr><td><strong>7:00 AM</strong></td><td><strong>Wake up</strong></td><td>Make bed.</td></tr>
+<tr><td>7:02</td><td>Water + Coffee + Snack</td><td>Banana + handful of walnuts.</td></tr>
+<tr><td>7:15</td><td>Prayer</td><td>10 minutes.</td></tr>
+<tr><td>7:25</td><td>Brush teeth + wash face</td><td></td></tr>
+<tr><td>7:35</td><td>Morning yoga</td><td>15-minute flow.</td></tr>
+<tr><td><strong>7:50</strong></td><td><strong>Get dressed</strong></td><td></td></tr>
+<tr><td>7:55</td><td>Breakfast</td><td>Bigger breakfast — heavy lifting day.</td></tr>
+<tr><td>8:10</td><td>Dishes + kitchen cleanup</td><td></td></tr>
+<tr><td>8:15</td><td>Pre-market prep</td><td>Friday: evaluate weekly P&L, close or hold positions over weekend.</td></tr>
+<tr><td>8:25</td><td>Final setup</td><td></td></tr>
+<tr><td><strong>8:30</strong></td><td class="highlight-trading"><strong>TRADING SESSION</strong></td><td>End-of-week execution. Close what needs closing.</td></tr>
+<tr><td>10:30</td><td>Water break</td><td></td></tr>
+<tr><td><strong>12:00</strong></td><td><strong>Trading session ends</strong></td><td>Week's trading done. Full journal entry.</td></tr>
+<tr><td>12:05</td><td>Lunch</td><td></td></tr>
+<tr><td>12:30</td><td>Dishes + brush teeth</td><td></td></tr>
+<tr><td><strong>12:45</strong></td><td class="highlight-coding"><strong>CODING SESSION</strong></td><td>Friday afternoon — wrap up the week's coding tasks.</td></tr>
+<tr><td>2:00</td><td>Break</td><td></td></tr>
+<tr><td>2:10</td><td>Coding continues</td><td></td></tr>
+<tr><td><strong>4:15</strong></td><td><strong>Pre-workout</strong></td><td>Snack. Gym bag ready (packed Thursday night).</td></tr>
+<tr><td>4:25</td><td>Drive to gym</td><td></td></tr>
+<tr><td><strong>4:30</strong></td><td><strong>WORKOUT — Heavy Lower + Pulls (Commercial Gym)</strong></td><td>See workout program. ~60 min. Squats, deadlifts, weighted pull-ups.</td></tr>
+<tr><td>5:30</td><td>Cool down + stretch</td><td></td></tr>
+<tr><td>5:35</td><td>Shower (gym or home)</td><td></td></tr>
+<tr><td>6:05</td><td>Drive home</td><td></td></tr>
+<tr><td><strong>6:15</strong></td><td><strong>Dinner prep + cook</strong></td><td></td></tr>
+<tr><td>6:40</td><td>Eat dinner</td><td></td></tr>
+<tr><td>7:00</td><td>Dishes + kitchen cleanup</td><td></td></tr>
+<tr><td>7:10</td><td>Brush teeth</td><td></td></tr>
+<tr><td><strong>7:15</strong></td><td><strong>Evening market analysis</strong></td><td>Weekly wrap-up. Grade the week. Set watchlist for Monday.</td></tr>
+<tr><td>7:45</td><td>Next-day prep</td><td><strong>Pack gym bag for Saturday.</strong></td></tr>
+<tr><td><strong>8:00</strong></td><td><strong>Free / productive time</strong></td><td>Friday evening — earned. Call a friend. Watch something intentional.</td></tr>
+<tr><td>8:25</td><td>Tidy living space</td><td>15 min.</td></tr>
+<tr><td>8:40</td><td>Light snack (optional)</td><td></td></tr>
+<tr><td><strong>9:00</strong></td><td><strong>SCREEN CURFEW</strong></td><td></td></tr>
+<tr><td>9:00</td><td>Evening yoga</td><td>10-minute flow.</td></tr>
+<tr><td>9:10</td><td>Reading</td><td>25 minutes.</td></tr>
+<tr><td>9:35</td><td>Brush teeth + bed prep</td><td></td></tr>
+<tr><td><strong>9:45</strong></td><td><strong>LIGHTS OUT</strong></td><td>8.5 hours. Rested for Saturday's peak training.</td></tr>
+</tbody></table></div>
+
+<hr>
+
+<h3>SATURDAY — Peak Training Day (Commercial Gym)</h3>
+
+<blockquote><strong>No market today.</strong> Sleep 45 min later. Gym is the main event. Coding and personal projects fill the day.</blockquote>
+
+<div style="overflow-x: auto;"><table>
+<thead><tr><th>Time</th><th>Block</th><th>Details</th></tr></thead><tbody>
+<tr><td><strong>7:00 AM</strong></td><td><strong>Wake up</strong></td><td>45 min later than weekdays. Make bed.</td></tr>
+<tr><td>7:02</td><td>Water + Coffee + Snack</td><td>Water. Coffee. Banana + almonds.</td></tr>
+<tr><td>7:15</td><td>Prayer</td><td>10 minutes.</td></tr>
+<tr><td>7:25</td><td>Brush teeth + wash face</td><td></td></tr>
+<tr><td>7:35</td><td>Morning yoga</td><td>15-minute flow.</td></tr>
+<tr><td><strong>7:50</strong></td><td><strong>Breakfast</strong></td><td>Cook a solid breakfast — peak day needs fuel.</td></tr>
+<tr><td>8:15</td><td>Dishes + kitchen cleanup</td><td></td></tr>
+<tr><td>8:25</td><td>Morning reading</td><td>30 minutes.</td></tr>
+<tr><td><strong>8:55</strong></td><td><strong>Coding / Personal projects</strong></td><td>No market today. Use this prime focus time for deep coding.</td></tr>
+<tr><td>10:15</td><td>Break</td><td>10 min. Water. Stretch.</td></tr>
+<tr><td>10:25</td><td>Pre-workout snack</td><td>Trail mix or protein bar.</td></tr>
+<tr><td>10:35</td><td>Change into gym clothes. Drive to gym.</td><td></td></tr>
+<tr><td><strong>11:00</strong></td><td><strong>WORKOUT — Peak Full Body Power (Commercial Gym)</strong></td><td>Week's hardest session. ~65 min. Power cleans, heavy squats, bench.</td></tr>
+<tr><td>12:05</td><td>Cool down + stretch</td><td></td></tr>
+<tr><td>12:10</td><td>Shower at gym</td><td></td></tr>
+<tr><td>12:30</td><td>Drive home</td><td></td></tr>
+<tr><td><strong>12:45</strong></td><td><strong>Lunch</strong></td><td></td></tr>
+<tr><td>1:10</td><td>Dishes + brush teeth</td><td></td></tr>
+<tr><td><strong>1:20</strong></td><td class="highlight-coding"><strong>CODING SESSION / Personal projects</strong></td><td></td></tr>
+<tr><td>3:00</td><td>Break</td><td></td></tr>
+<tr><td>3:10</td><td>Coding continues</td><td></td></tr>
+<tr><td><strong>4:30</strong></td><td><strong>Free time / Errands</strong></td><td>Grocery run, chores, personal business.</td></tr>
+<tr><td><strong>6:00</strong></td><td><strong>Dinner prep + cook</strong></td><td></td></tr>
+<tr><td>6:25</td><td>Eat dinner</td><td></td></tr>
+<tr><td>6:45</td><td>Dishes + kitchen cleanup</td><td></td></tr>
+<tr><td>6:55</td><td>Brush teeth</td><td></td></tr>
+<tr><td><strong>7:00</strong></td><td><strong>Weekly review</strong></td><td>Review the full week: trading performance, coding progress, fitness log.</td></tr>
+<tr><td>7:30</td><td>Plan next week</td><td>Set Monday's watchlist. Outline coding goals. Check meal prep list.</td></tr>
+<tr><td><strong>8:00</strong></td><td><strong>Free time</strong></td><td>Saturday evening. Intentional enjoyment. Movie, social, hobby. NO scrolling.</td></tr>
+<tr><td><strong>9:00</strong></td><td><strong>SCREEN CURFEW</strong></td><td></td></tr>
+<tr><td>9:00</td><td>Evening yoga</td><td>10-minute flow.</td></tr>
+<tr><td>9:10</td><td>Reading</td><td>25 minutes.</td></tr>
+<tr><td>9:35</td><td>Brush teeth + bed prep</td><td></td></tr>
+<tr><td><strong>9:45</strong></td><td><strong>LIGHTS OUT</strong></td><td>9+ hours sleep tonight (wake 7:00). Maximum recovery after peak day.</td></tr>
+</tbody></table></div>
+
+<hr>
+
+<h3>SUNDAY — Rest Day + Church + Meal Prep</h3>
+
+<blockquote><strong>No workout. No trading. Recharge the body and mind. Prepare for the week.</strong></blockquote>
+
+<div style="overflow-x: auto;"><table>
+<thead><tr><th>Time</th><th>Block</th><th>Details</th></tr></thead><tbody>
+<tr><td><strong>6:30 AM</strong></td><td><strong>Wake up</strong></td><td>Early for church. Make bed.</td></tr>
+<tr><td>6:32</td><td>Water + Coffee + Snack</td><td>Quick coffee. Light snack.</td></tr>
+<tr><td>6:45</td><td>Prayer</td><td>15 min. Reflect on the week. Set intentions.</td></tr>
+<tr><td>7:00</td><td>Brush teeth + wash face</td><td></td></tr>
+<tr><td>7:05</td><td>Morning yoga</td><td>15-minute flow.</td></tr>
+<tr><td><strong>7:20</strong></td><td><strong>Get ready for church</strong></td><td>Shower, dress, gather what you need.</td></tr>
+<tr><td>7:50</td><td>Grab something light</td><td>Banana or granola bar for the road if needed.</td></tr>
+<tr><td><strong>8:00</strong></td><td><strong>Leave for church</strong></td><td></td></tr>
+<tr><td><strong>8:30</strong></td><td><strong>CHURCH</strong></td><td></td></tr>
+<tr><td>~9:30</td><td>Church ends</td><td>Drive home.</td></tr>
+<tr><td><strong>9:45</strong></td><td><strong>Brunch</strong></td><td>Cook something you enjoy. No rush now.</td></tr>
+<tr><td>10:15</td><td>Dishes + cleanup</td><td></td></tr>
+<tr><td>10:30</td><td>Morning reading</td><td>30 minutes. Book and coffee.</td></tr>
+<tr><td><strong>11:00</strong></td><td><strong>Rest / decompress</strong></td><td>Sit outside. Journal. Light walk. No screens.</td></tr>
+<tr><td><strong>11:30</strong></td><td><strong>Grocery run (if needed)</strong></td><td>Grab anything missing for the week's meal prep.</td></tr>
+<tr><td>12:15</td><td>Put away groceries</td><td></td></tr>
+<tr><td><strong>12:30</strong></td><td><strong>MEAL PREP</strong></td><td>Batch cook proteins, grains, and chop vegetables for the week. See meal prep guide below. ~2.5-3 hours.</td></tr>
+<tr><td>12:30-1:00</td><td>Start rice/quinoa. Season and prep all proteins.</td><td></td></tr>
+<tr><td>1:00-1:30</td><td>Proteins in oven/on stove. Chop all vegetables.</td><td></td></tr>
+<tr><td>1:30-2:00</td><td>Roast vegetables. Cook any sauces/marinades.</td><td></td></tr>
+<tr><td>2:00-2:30</td><td>Portion meals into containers.</td><td></td></tr>
+<tr><td>2:30-3:00</td><td>Clean kitchen completely. Every surface.</td><td></td></tr>
+<tr><td><strong>3:00</strong></td><td><strong>Light walk</strong></td><td>20-30 min. Active recovery. Fresh air. No phone.</td></tr>
+<tr><td>3:30</td><td>Free time</td><td>Reading, hobby, rest.</td></tr>
+<tr><td><strong>6:00</strong></td><td><strong>Dinner</strong></td><td>Simple — use some of today's meal prep.</td></tr>
+<tr><td>6:25</td><td>Dishes + brush teeth</td><td></td></tr>
+<tr><td><strong>6:35</strong></td><td><strong>Weekly planning session</strong></td><td>45 min. Detailed.</td></tr>
+<tr><td></td><td>— Review trading journal, set Monday's plan</td><td></td></tr>
+<tr><td></td><td>— Review coding backlog, set the week's goals</td><td></td></tr>
+<tr><td></td><td>— Check calendar for the week (any appointments?)</td><td></td></tr>
+<tr><td></td><td>— Review and adjust this schedule if needed</td><td></td></tr>
+<tr><td><strong>7:20</strong></td><td><strong>Free time</strong></td><td>Sunday evening. Call family. Read. Rest.</td></tr>
+<tr><td>8:30</td><td>Prep for Monday</td><td>Lay out clothes. Pack nothing (Monday is home workout). Set alarm.</td></tr>
+<tr><td>8:45</td><td>Light snack (optional)</td><td></td></tr>
+<tr><td><strong>9:00</strong></td><td><strong>SCREEN CURFEW</strong></td><td>Most important night of the week. Monday's trading starts NOW.</td></tr>
+<tr><td>9:00</td><td>Evening yoga</td><td>10-minute flow.</td></tr>
+<tr><td>9:10</td><td>Reading</td><td>25 minutes.</td></tr>
+<tr><td>9:35</td><td>Brush teeth + bed prep</td><td></td></tr>
+<tr><td><strong>9:45</strong></td><td><strong>LIGHTS OUT</strong></td><td>9+ hours to 7:00 AM. Start the week rested and sharp.</td></tr>
+</tbody></table></div>
+
+<hr>
+
+<h2>Workout Programs — Detailed</h2>
+
+<div style="overflow-x: auto;"><table>
+<thead><tr></tr></thead><tbody>
+</tbody></table></div>
+
+<em>Warm-up (5 min):</em> Arm circles, shoulder rolls, 20 jumping jacks, 10 arm swings each direction.
+
+<div style="overflow-x: auto;"><table>
+<thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Rest</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Pull-ups (or assisted)</td><td>3 x 8-10</td><td>60 sec</td><td>Full dead hang. Controlled descent.</td></tr>
+<tr><td>Push-ups (standard)</td><td>3 x 15</td><td>45 sec</td><td>Chest to floor. Full lockout.</td></tr>
+<tr><td>Diamond push-ups</td><td>3 x 10</td><td>45 sec</td><td>Hands together under chest.</td></tr>
+<tr><td>Inverted rows (table/bar)</td><td>3 x 12</td><td>45 sec</td><td>Body straight. Pull chest to bar.</td></tr>
+<tr><td>Pike push-ups</td><td>3 x 10</td><td>45 sec</td><td>Hips high. Head between hands.</td></tr>
+<tr><td>Chair dips</td><td>3 x 12</td><td>45 sec</td><td>Elbows back, not flared.</td></tr>
+<tr><td>Plank hold</td><td>3 x 45 sec</td><td>30 sec</td><td>Squeeze glutes. Don't sag.</td></tr>
+</tbody></table></div>
+
+<em>Cool-down:</em> Shoulder stretch, chest doorway stretch, child's pose — 3 min.
+
+<hr>
+
+<div style="overflow-x: auto;"><table>
+<thead><tr></tr></thead><tbody>
+</tbody></table></div>
+
+<em>Warm-up (5 min):</em> High knees, butt kicks, leg swings (front/side), 20 bodyweight squats.
+
+<div style="overflow-x: auto;"><table>
+<thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Rest</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Bodyweight squats</td><td>4 x 20</td><td>45 sec</td><td>Full depth. Chest up.</td></tr>
+<tr><td>Walking lunges</td><td>3 x 12 each leg</td><td>60 sec</td><td>Long stride. Back knee near floor.</td></tr>
+<tr><td>Bulgarian split squats</td><td>3 x 10 each leg</td><td>60 sec</td><td>Rear foot on chair. Control the descent.</td></tr>
+<tr><td>Single-leg Romanian deadlift</td><td>3 x 10 each leg</td><td>45 sec</td><td>Hinge at hip. Slight knee bend.</td></tr>
+<tr><td>Glute bridges</td><td>3 x 15</td><td>45 sec</td><td>Squeeze at top for 2 sec.</td></tr>
+<tr><td>Calf raises (on step)</td><td>4 x 20</td><td>30 sec</td><td>Full range — drop heel below step.</td></tr>
+<tr><td>Wall sit</td><td>3 x 45 sec</td><td>45 sec</td><td>Thighs parallel to floor.</td></tr>
+<tr><td>Pistol squat progressions</td><td>3 x 5 each leg</td><td>60 sec</td><td>Use a chair or doorframe for assistance. Build toward unassisted.</td></tr>
+</tbody></table></div>
+
+<em>Cool-down:</em> Quad stretch, hamstring stretch, pigeon pose — 3 min.
+
+<hr>
+
+<div style="overflow-x: auto;"><table>
+<thead><tr></tr></thead><tbody>
+</tbody></table></div>
+
+<em>Warm-up (5 min):</em> 5 min rowing machine or light band pull-aparts and arm circles.
+
+<div style="overflow-x: auto;"><table>
+<thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Weight</th><th>Rest</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Barbell bench press</td><td>4 x 8</td><td>Moderate</td><td>90 sec</td><td>Control the negative. Full ROM.</td></tr>
+<tr><td>Overhead press (barbell)</td><td>3 x 8</td><td>Moderate</td><td>90 sec</td><td>Strict. No leg drive.</td></tr>
+<tr><td>Barbell bent-over rows</td><td>4 x 8</td><td>Moderate</td><td>90 sec</td><td>Pull to lower chest. Squeeze back.</td></tr>
+<tr><td>Lat pulldown</td><td>3 x 10</td><td>Moderate</td><td>60 sec</td><td>Wide grip. Pull to upper chest.</td></tr>
+<tr><td>Dumbbell curls</td><td>3 x 12</td><td>Light-Mod</td><td>45 sec</td><td>No swinging. Controlled.</td></tr>
+<tr><td>Tricep rope pushdowns</td><td>3 x 12</td><td>Light-Mod</td><td>45 sec</td><td>Elbows pinned. Full extension.</td></tr>
+<tr><td>Face pulls</td><td>3 x 15</td><td>Light</td><td>45 sec</td><td>External rotation at top.</td></tr>
+</tbody></table></div>
+
+<em>Cool-down:</em> Chest stretch, lat stretch, tricep stretch — 3 min.
+
+<hr>
+
+<div style="overflow-x: auto;"><table>
+<thead><tr></tr></thead><tbody>
+</tbody></table></div>
+
+<em>Warm-up (5 min):</em> Jumping jacks, arm circles, hip circles, 10 burpees.
+
+<div style="overflow-x: auto;"><table>
+<thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Rest</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Pull-ups (strict)</td><td>4 x max (aim 8-12)</td><td>90 sec</td><td>Full range. No kipping.</td></tr>
+<tr><td>Decline push-ups (feet elevated)</td><td>4 x 12</td><td>60 sec</td><td>Feet on chair or bench.</td></tr>
+<tr><td>Pistol squats (or assisted)</td><td>3 x 6 each leg</td><td>90 sec</td><td>Use doorframe for balance if needed.</td></tr>
+<tr><td>L-sit hold (floor or bars)</td><td>4 x 15-20 sec</td><td>60 sec</td><td>Legs straight. Push through shoulders.</td></tr>
+<tr><td>Hanging leg raises (pull-up bar)</td><td>3 x 12</td><td>60 sec</td><td>Controlled. No swinging.</td></tr>
+<tr><td>Handstand wall hold</td><td>3 x 30 sec</td><td>60 sec</td><td>Chest facing wall. Push through shoulders.</td></tr>
+<tr><td>Burpees</td><td>3 x 10</td><td>60 sec</td><td>Full push-up at bottom. Jump at top.</td></tr>
+<tr><td>Jump squats</td><td>3 x 12</td><td>45 sec</td><td>Deep squat. Explosive jump. Soft landing.</td></tr>
+</tbody></table></div>
+
+<em>Cool-down:</em> Wrist stretches, hip flexor stretch, spinal twist — 3 min.
+
+<hr>
+
+<div style="overflow-x: auto;"><table>
+<thead><tr></tr></thead><tbody>
+</tbody></table></div>
+
+<em>Warm-up (8 min):</em> 5 min bike, then empty bar squats x10, good mornings x10, pull-ups x5.
+
+<div style="overflow-x: auto;"><table>
+<thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Weight</th><th>Rest</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Barbell back squats</td><td>5 x 5</td><td>Heavy</td><td>2-3 min</td><td>Depth below parallel. Brace hard.</td></tr>
+<tr><td>Conventional deadlifts</td><td>5 x 5</td><td>Heavy</td><td>2-3 min</td><td>Hinge pattern. Bar close to shins.</td></tr>
+<tr><td>Weighted pull-ups</td><td>4 x 6</td><td>+25-45 lb</td><td>2 min</td><td>Use belt or dumbbell between feet.</td></tr>
+<tr><td>Leg press</td><td>3 x 10</td><td>Heavy</td><td>90 sec</td><td>Full ROM. Don't lock knees.</td></tr>
+<tr><td>Lying hamstring curls</td><td>3 x 10</td><td>Moderate</td><td>60 sec</td><td>Slow negative.</td></tr>
+<tr><td>Barbell rows</td><td>4 x 6</td><td>Heavy</td><td>90 sec</td><td>Overhand grip. Pull to navel.</td></tr>
+</tbody></table></div>
+
+<em>Cool-down:</em> Hamstring stretch, quad stretch, dead hang (30 sec) — 5 min.
+
+<hr>
+
+<div style="overflow-x: auto;"><table>
+<thead><tr></tr></thead><tbody>
+</tbody></table></div>
+
+<blockquote><strong>Week's hardest session.</strong> Go in fresh and focused. This is where you earn the rest day.</blockquote>
+
+<em>Warm-up (8 min):</em> 5 min jump rope, then dynamic stretches, empty bar complex (clean + press x5).
+
+<div style="overflow-x: auto;"><table>
+<thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Weight</th><th>Rest</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Power cleans</td><td>5 x 3</td><td>Heavy</td><td>2-3 min</td><td>Explosive hip extension. Catch in front rack.</td></tr>
+<tr><td>Back squats</td><td>5 x 3</td><td>Very heavy</td><td>3 min</td><td>Near max effort. Spotter or safety bars.</td></tr>
+<tr><td>Bench press</td><td>5 x 3</td><td>Very heavy</td><td>3 min</td><td>Controlled. Pause on chest.</td></tr>
+<tr><td>Weighted dips</td><td>4 x 6</td><td>+25-45 lb</td><td>2 min</td><td>Full depth. Lean slightly forward.</td></tr>
+<tr><td>Farmer's walks</td><td>3 x 40 meters</td><td>Heavy DBs</td><td>90 sec</td><td>Grip tight. Shoulders back. Short steps.</td></tr>
+<tr><td>Box jumps</td><td>3 x 8</td><td>Bodyweight</td><td>60 sec</td><td>Step down (don't jump down). Reset each rep.</td></tr>
+</tbody></table></div>
+
+<em>Cool-down:</em> Full body stretch, 2 min dead hang, foam roll quads and back — 5 min.
+
+<hr>
+
+<h2>14-Day Meal Plan with Recipes</h2>
+
+<blockquote><strong>Principles:</strong> High protein, balanced carbs and veggies. Simple prep. Nothing over 30 min cook time.<br>Portions are for one person. Scale as needed.<br><strong>Morning snack</strong> (with coffee) is always something small: banana, handful of almonds, rice cake, or a few dates.<br><strong>Pre-workout snack</strong> options rotate: apple + PB, banana, trail mix, protein bar, rice cake + honey, Greek yogurt.</blockquote>
+
+<hr>
+
+<h3>DAY 1 — Monday (Week 1)</h3>
+
+<strong>Breakfast: Scrambled Eggs with Toast and Berries</strong>
+<ul>
+<li>3 large eggs</li>
+<li>1 tbsp butter</li>
+<li>Salt, pepper</li>
+<li>2 slices whole wheat toast</li>
+<li>1/2 cup mixed berries</li>
+</ul>
+
+<em>Whisk eggs with salt and pepper. Melt butter in pan over medium-low. Add eggs, stir gently until just set (2-3 min). Serve with toast and berries on the side.</em>
+
+<strong>Lunch: Grilled Chicken, Brown Rice, and Broccoli</strong>
+<ul>
+<li>6 oz chicken breast (from meal prep)</li>
+<li>3/4 cup brown rice (from meal prep)</li>
+<li>1 cup steamed broccoli (from meal prep)</li>
+<li>Soy sauce or hot sauce to taste</li>
+</ul>
+
+<em>Reheat chicken, rice, and broccoli. Drizzle with soy sauce. Done in 3 min.</em>
+
+<strong>Dinner: One-Pan Lemon Herb Salmon</strong>
+<ul>
+<li>6 oz salmon fillet</li>
+<li>1 medium sweet potato, cubed</li>
+<li>1 cup asparagus, trimmed</li>
+<li>1 tbsp olive oil</li>
+<li>1 lemon (juice + zest)</li>
+<li>2 cloves garlic, minced</li>
+<li>Salt, pepper, dried thyme</li>
+</ul>
+
+<em>Preheat oven to 400F. Toss sweet potato cubes with half the olive oil, salt, pepper — roast 15 min. Toss asparagus with remaining oil, place salmon on same pan. Top salmon with garlic, lemon zest, juice, thyme. Roast another 12-15 min. Total: 30 min.</em>
+
+<hr>
+
+<h3>DAY 2 — Tuesday (Week 1)</h3>
+
+<blockquote>Quick dinner tonight — algo class at 6 PM.</blockquote>
+
+<strong>Breakfast: Oatmeal Power Bowl</strong>
+<ul>
+<li>1/2 cup rolled oats</li>
+<li>1 cup water or milk</li>
+<li>1 scoop protein powder (vanilla or chocolate)</li>
+<li>1 banana, sliced</li>
+<li>1 tbsp walnuts</li>
+<li>Drizzle of honey</li>
+</ul>
+
+<em>Cook oats in water/milk (5 min stovetop or 2 min microwave). Stir in protein powder. Top with banana, walnuts, honey.</em>
+
+<strong>Lunch: Turkey Avocado Wrap</strong>
+<ul>
+<li>1 large flour tortilla</li>
+<li>5 oz deli turkey (from meal prep batch or deli)</li>
+<li>1/2 avocado, sliced</li>
+<li>Handful mixed greens</li>
+<li>Tomato slices</li>
+<li>Mustard or mayo</li>
+</ul>
+
+<em>Lay tortilla flat. Layer turkey, avocado, greens, tomato. Add mustard. Roll tight. Slice in half. 5 min.</em>
+
+<strong>Dinner: Quick Ground Beef Tacos</strong> (Must be done by 5:30)
+<ul>
+<li>8 oz lean ground beef</li>
+<li>1 packet taco seasoning (or: 1 tsp cumin, 1 tsp chili powder, 1/2 tsp garlic powder, salt)</li>
+<li>4 small corn or flour tortillas</li>
+<li>Toppings: shredded cheese, salsa, sour cream, shredded lettuce</li>
+</ul>
+
+<em>Brown beef in skillet (5 min). Drain fat. Add seasoning + 1/4 cup water, simmer 3 min. Warm tortillas. Assemble. Total: 12 min.</em>
+
+<hr>
+
+<h3>DAY 3 — Wednesday (Week 1)</h3>
+
+<strong>Breakfast: Greek Yogurt Parfait</strong>
+<ul>
+<li>1 cup plain Greek yogurt</li>
+<li>1/3 cup granola</li>
+<li>1/2 cup blueberries</li>
+<li>1 tbsp honey</li>
+<li>1 tbsp chia seeds</li>
+</ul>
+
+<em>Layer yogurt, granola, blueberries in a bowl. Drizzle honey. Sprinkle chia seeds. No cooking. 2 min.</em>
+
+<strong>Lunch: Chicken Stir-Fry with Rice</strong>
+<ul>
+<li>6 oz chicken breast, sliced (from meal prep)</li>
+<li>1 cup stir-fry vegetables (bell peppers, snap peas, carrots — from meal prep)</li>
+<li>2 tbsp soy sauce</li>
+<li>1 tbsp sesame oil</li>
+<li>3/4 cup jasmine rice (from meal prep)</li>
+</ul>
+
+<em>Heat sesame oil in a skillet. Stir-fry chicken and veggies 4-5 min until hot. Add soy sauce. Serve over rice. 8 min.</em>
+
+<strong>Dinner: Pork Chops with Mashed Potatoes and Green Beans</strong>
+<ul>
+<li>2 boneless pork chops (~5 oz each)</li>
+<li>Salt, pepper, garlic powder, paprika</li>
+<li>2 medium russet potatoes, peeled and cubed</li>
+<li>2 tbsp butter + splash of milk</li>
+<li>1 cup green beans</li>
+</ul>
+
+<em>Boil potatoes until tender (15 min). While boiling: season pork chops, pan-sear in oiled skillet 4 min per side. Steam green beans 5 min. Mash potatoes with butter and milk. Total: 25 min.</em>
+
+<hr>
+
+<h3>DAY 4 — Thursday (Week 1)</h3>
+
+<strong>Breakfast: Egg and Cheese Breakfast Burrito</strong>
+<ul>
+<li>3 eggs, scrambled</li>
+<li>1 large tortilla</li>
+<li>1/4 cup shredded cheddar</li>
+<li>2 tbsp salsa</li>
+<li>Hot sauce (optional)</li>
+</ul>
+
+<em>Scramble eggs in buttered pan. Place in tortilla, add cheese and salsa. Roll up. 5 min.</em>
+
+<strong>Lunch: Tuna Salad on Whole Wheat</strong>
+<ul>
+<li>1 can (5 oz) tuna, drained</li>
+<li>2 tbsp mayo</li>
+<li>1 tsp Dijon mustard</li>
+<li>Diced celery (2 tbsp)</li>
+<li>Salt, pepper, squeeze of lemon</li>
+<li>2 slices whole wheat bread</li>
+<li>Lettuce leaf, tomato slice</li>
+</ul>
+
+<em>Mix tuna, mayo, mustard, celery, lemon, S&P. Spread on bread with lettuce and tomato. 5 min.</em>
+
+<strong>Dinner: Chicken Fajitas</strong>
+<ul>
+<li>6 oz chicken breast, sliced thin</li>
+<li>1 bell pepper, sliced</li>
+<li>1/2 onion, sliced</li>
+<li>1 tbsp fajita seasoning (or: cumin, chili powder, garlic, paprika)</li>
+<li>1 tbsp olive oil</li>
+<li>4 small tortillas</li>
+<li>Toppings: sour cream, guacamole, cheese, lime</li>
+</ul>
+
+<em>Heat oil in skillet on high. Add chicken, cook 4 min. Add peppers and onion, cook 3-4 min. Add seasoning. Warm tortillas. Assemble. Total: 12 min.</em>
+
+<hr>
+
+<h3>DAY 5 — Friday (Week 1)</h3>
+
+<strong>Breakfast: Protein Pancakes</strong>
+<ul>
+<li>1 scoop protein powder (vanilla)</li>
+<li>1/2 cup oats (blended into flour)</li>
+<li>1 egg</li>
+<li>1/3 cup milk</li>
+<li>1/2 tsp baking powder</li>
+<li>Maple syrup, sliced strawberries</li>
+</ul>
+
+<em>Blend oats into flour. Mix all batter ingredients. Cook on greased griddle — 2-3 min per side. Makes 3-4 pancakes. Top with syrup and strawberries. 10 min.</em>
+
+<strong>Lunch: Steak Strips with Quinoa and Brussels Sprouts</strong>
+<ul>
+<li>6 oz sirloin steak, sliced into strips (from meal prep or cook fresh)</li>
+<li>3/4 cup quinoa (from meal prep)</li>
+<li>1 cup Brussels sprouts, halved</li>
+<li>1 tbsp olive oil</li>
+<li>Salt, pepper, garlic powder</li>
+</ul>
+
+<em>If cooking fresh: heat oil in skillet on high, sear steak strips 2 min per side. Roast Brussels sprouts at 400F for 15 min with oil/salt/pepper. Reheat quinoa. If from meal prep: reheat all together. 5-20 min depending.</em>
+
+<strong>Dinner: Pasta with Ground Turkey Meat Sauce</strong>
+<ul>
+<li>8 oz ground turkey</li>
+<li>2 cups penne pasta</li>
+<li>1 cup marinara sauce</li>
+<li>2 cloves garlic, minced</li>
+<li>1 tbsp olive oil</li>
+<li>Side salad: mixed greens, cherry tomatoes, balsamic vinaigrette</li>
+</ul>
+
+<em>Boil pasta (10 min). While boiling: heat oil, cook garlic 30 sec, add ground turkey, brown 5 min. Add marinara, simmer 5 min. Drain pasta, combine. Toss salad on the side. Total: 15 min.</em>
+
+<hr>
+
+<h3>DAY 6 — Saturday (Week 1)</h3>
+
+<strong>Breakfast: Avocado Toast with Fried Eggs</strong>
+<ul>
+<li>2 slices sourdough bread, toasted</li>
+<li>1 ripe avocado</li>
+<li>2 eggs, fried</li>
+<li>Cherry tomatoes, halved</li>
+<li>Red pepper flakes, salt, pepper</li>
+<li>Squeeze of lime</li>
+</ul>
+
+<em>Toast bread. Mash avocado on toast with salt, pepper, lime, red pepper flakes. Fry eggs in butter (sunny side up or over-easy). Place eggs on toast. Add tomatoes on the side. 8 min.</em>
+
+<strong>Lunch: Shrimp and Rice Bowl</strong>
+<ul>
+<li>6 oz shrimp, peeled and deveined</li>
+<li>3/4 cup jasmine rice (from meal prep)</li>
+<li>1/2 cup edamame (frozen, thawed)</li>
+<li>1 tbsp soy sauce</li>
+<li>1 tsp sesame oil</li>
+<li>Sriracha, sliced green onion</li>
+</ul>
+
+<em>Heat sesame oil in pan. Cook shrimp 2-3 min per side until pink. Reheat rice. Bowl: rice, shrimp, edamame. Drizzle soy sauce and sriracha. Garnish with green onion. 10 min.</em>
+
+<strong>Dinner: BBQ Chicken Thighs with Corn and Coleslaw</strong>
+<ul>
+<li>4 bone-in chicken thighs</li>
+<li>1/4 cup BBQ sauce</li>
+<li>2 ears of corn (or 1 cup frozen)</li>
+<li>Salt, pepper, garlic powder</li>
+</ul>
+
+<p>Coleslaw:</p>
+<ul>
+<li>2 cups shredded cabbage (bagged mix)</li>
+<li>2 tbsp mayo</li>
+<li>1 tbsp apple cider vinegar</li>
+<li>1 tsp sugar, salt, pepper</li>
+</ul>
+
+<em>Preheat oven to 425F. Season thighs with salt, pepper, garlic. Bake 25 min, brush with BBQ sauce, bake 5 more min. Boil or microwave corn. Mix coleslaw ingredients. Total: 30 min. Leftover thighs = meal prep for next week.</em>
+
+<hr>
+
+<h3>DAY 7 — Sunday (Week 1) — Meal Prep Day</h3>
+
+<strong>Breakfast: French Toast with Berries</strong>
+<ul>
+<li>3 thick slices bread (brioche or Texas toast)</li>
+<li>2 eggs</li>
+<li>1/4 cup milk</li>
+<li>1 tsp cinnamon</li>
+<li>1 tsp vanilla extract</li>
+<li>Butter for cooking</li>
+<li>Mixed berries, maple syrup, powdered sugar</li>
+</ul>
+
+<em>Whisk eggs, milk, cinnamon, vanilla. Dip bread slices, let soak 10 sec each side. Cook in buttered pan 2-3 min per side until golden. Top with berries, syrup, powdered sugar. 12 min.</em>
+
+<strong>Brunch/Lunch: Simple Turkey Sandwich</strong>
+<ul>
+<li>Deli turkey, cheese, lettuce, tomato on whole wheat</li>
+<li>Side of fruit or chips</li>
+</ul>
+
+<em>Assemble. 3 min.</em>
+
+<strong>Dinner: Slow Cooker Pot Roast</strong> (Goes in during meal prep)
+<ul>
+<li>2-3 lb chuck roast</li>
+<li>4 medium potatoes, quartered</li>
+<li>3 carrots, chunked</li>
+<li>1 onion, quartered</li>
+<li>2 cups beef broth</li>
+<li>1 packet onion soup mix (or: garlic, thyme, Worcestershire)</li>
+</ul>
+
+<em>Place roast in slow cooker. Surround with vegetables. Pour broth over top. Add seasoning. Cook on LOW 8 hours or HIGH 4-5 hours. Start when meal prep begins (~1 PM). Ready by dinner. Leftovers for lunches. 5 min active prep.</em>
+
+<hr>
+
+<h3>DAY 8 — Monday (Week 2)</h3>
+
+<strong>Breakfast: Smoothie Bowl</strong>
+<ul>
+<li>1 scoop protein powder (vanilla)</li>
+<li>1 cup frozen mixed berries</li>
+<li>1/2 banana</li>
+<li>1/2 cup milk</li>
+<li>Toppings: granola, sliced banana, chia seeds, drizzle of honey</li>
+</ul>
+
+<em>Blend protein, frozen berries, banana, milk until thick (less liquid than a smoothie). Pour into bowl. Add toppings. 5 min.</em>
+
+<strong>Lunch: Chicken Caesar Wrap</strong>
+<ul>
+<li>6 oz grilled chicken (from meal prep)</li>
+<li>1 large tortilla</li>
+<li>Romaine lettuce, chopped</li>
+<li>2 tbsp Caesar dressing</li>
+<li>Parmesan cheese, shaved</li>
+<li>Croutons (optional)</li>
+</ul>
+
+<em>Toss chicken and romaine with dressing. Place in tortilla with Parmesan. Roll. 5 min.</em>
+
+<strong>Dinner: Teriyaki Salmon with Jasmine Rice and Bok Choy</strong>
+<ul>
+<li>6 oz salmon fillet</li>
+<li>2 tbsp teriyaki sauce (bottled is fine)</li>
+<li>3/4 cup jasmine rice (from meal prep)</li>
+<li>2 baby bok choy, halved</li>
+<li>1 tsp sesame oil</li>
+<li>Sesame seeds, green onion</li>
+</ul>
+
+<em>Brush salmon with teriyaki. Bake at 400F for 12-15 min. Sauté bok choy in sesame oil with a splash of soy sauce, 3-4 min. Reheat rice. Garnish with sesame seeds and green onion. 20 min.</em>
+
+<hr>
+
+<h3>DAY 9 — Tuesday (Week 2)</h3>
+
+<blockquote>Quick dinner — algo class at 6 PM.</blockquote>
+
+<strong>Breakfast: Veggie Omelet</strong>
+<ul>
+<li>3 eggs</li>
+<li>1/4 cup diced bell pepper</li>
+<li>2 tbsp diced onion</li>
+<li>Handful of spinach</li>
+<li>1/4 cup shredded cheese</li>
+<li>1 slice toast</li>
+</ul>
+
+<em>Beat eggs. Cook veggies in buttered pan 2 min. Pour eggs over, cook until edges set. Add cheese and spinach to one half, fold. Cook 1 more min. 8 min.</em>
+
+<strong>Lunch: Chicken Burrito Bowl</strong>
+<ul>
+<li>6 oz chicken (from meal prep), seasoned with cumin/chili</li>
+<li>3/4 cup rice (from meal prep)</li>
+<li>1/2 cup black beans (canned, rinsed)</li>
+<li>Salsa, sour cream, shredded cheese</li>
+<li>Diced avocado</li>
+</ul>
+
+<em>Reheat chicken, rice, and beans. Bowl it up with toppings. 5 min.</em>
+
+<strong>Dinner: Sloppy Joes with Sweet Potato Fries</strong> (Quick — done by 5:30)
+<ul>
+<li>8 oz lean ground beef or turkey</li>
+<li>1/2 cup ketchup</li>
+<li>1 tbsp Worcestershire sauce</li>
+<li>1 tbsp brown sugar</li>
+<li>1 tsp mustard</li>
+<li>1/2 onion, diced</li>
+<li>2 whole wheat buns</li>
+<li>1 large sweet potato, cut into fries</li>
+</ul>
+
+<em>Cut sweet potato into fries, toss with olive oil, salt, paprika. Bake at 425F for 20 min (start these first). While baking: brown meat with onion (5 min), add ketchup, Worcestershire, sugar, mustard, simmer 5 min. Serve on buns with fries. Total: 25 min.</em>
+
+<hr>
+
+<h3>DAY 10 — Wednesday (Week 2)</h3>
+
+<strong>Breakfast: Overnight Oats</strong> (Prepped night before)
+<ul>
+<li>1/2 cup rolled oats</li>
+<li>1/2 cup milk</li>
+<li>1/4 cup Greek yogurt</li>
+<li>1 tbsp peanut butter</li>
+<li>1 banana, sliced</li>
+<li>1 tbsp honey</li>
+<li>Pinch of cinnamon</li>
+</ul>
+
+<em>Night before: mix oats, milk, yogurt, PB, honey, cinnamon in a jar. Refrigerate overnight. Morning: top with banana. Eat cold. 0 min morning prep.</em>
+
+<strong>Lunch: Meatball Sub</strong>
+<ul>
+<li>4-5 frozen meatballs (or from meal prep batch)</li>
+<li>1/2 cup marinara sauce</li>
+<li>1 hoagie roll</li>
+<li>Mozzarella cheese (shredded or sliced)</li>
+<li>Side salad: mixed greens, balsamic vinaigrette</li>
+</ul>
+
+<em>Heat meatballs in marinara (microwave 3 min or stovetop 5 min). Place in roll, top with cheese. Optional: broil 2 min to melt cheese. 7 min.</em>
+
+<strong>Dinner: Lemon Herb Chicken with Roasted Potatoes and Green Beans</strong>
+<ul>
+<li>2 chicken breasts (~6 oz each, save one for tomorrow's lunch)</li>
+<li>3 medium red potatoes, cubed</li>
+<li>1 cup green beans</li>
+<li>2 tbsp olive oil</li>
+<li>1 lemon (juice + zest)</li>
+<li>3 cloves garlic, minced</li>
+<li>Dried oregano, salt, pepper</li>
+</ul>
+
+<em>Preheat oven to 400F. Toss potatoes with 1 tbsp oil, salt, pepper — roast 15 min. Season chicken with garlic, lemon, oregano, S&P. Add chicken and green beans to pan, drizzle remaining oil. Roast 20 more min. 35 min total (but mostly hands-off).</em>
+
+<hr>
+
+<h3>DAY 11 — Thursday (Week 2)</h3>
+
+<strong>Breakfast: Breakfast Hash</strong>
+<ul>
+<li>2 medium potatoes, diced small (or 1 cup frozen hash browns)</li>
+<li>3 eggs</li>
+<li>1 breakfast sausage link or 3 oz ground sausage</li>
+<li>1/2 bell pepper, diced</li>
+<li>Salt, pepper, paprika</li>
+</ul>
+
+<em>Cook sausage in skillet, break into pieces (3 min). Add potatoes and pepper, cook 8-10 min until potatoes are crispy. Push to sides, crack eggs in center, cook to preference. Season. 15 min.</em>
+
+<strong>Lunch: Asian Chicken Lettuce Wraps</strong>
+<ul>
+<li>6 oz ground chicken (or leftover chicken, diced small)</li>
+<li>1 tbsp soy sauce</li>
+<li>1 tsp sesame oil</li>
+<li>1 tsp rice vinegar</li>
+<li>1/2 tsp ginger (ground or fresh grated)</li>
+<li>1 clove garlic, minced</li>
+<li>Butter lettuce leaves (4-6)</li>
+<li>Diced water chestnuts, shredded carrots</li>
+<li>Sriracha</li>
+</ul>
+
+<em>Cook chicken in sesame oil with garlic and ginger (5 min). Add soy sauce, rice vinegar. Spoon into lettuce cups. Top with water chestnuts, carrots, sriracha. 10 min.</em>
+
+<strong>Dinner: Beef and Broccoli Stir-Fry</strong>
+<ul>
+<li>8 oz flank steak or sirloin, sliced thin against the grain</li>
+<li>2 cups broccoli florets</li>
+<li>3 tbsp soy sauce</li>
+<li>1 tbsp oyster sauce</li>
+<li>1 tsp cornstarch mixed with 2 tbsp water</li>
+<li>2 cloves garlic, minced</li>
+<li>1 tbsp vegetable oil</li>
+<li>3/4 cup rice (from meal prep)</li>
+</ul>
+
+<em>Heat oil in wok/skillet on high. Sear steak strips 2 min, remove. Add broccoli, cook 3 min with a splash of water. Add garlic, soy sauce, oyster sauce. Return beef. Add cornstarch slurry, stir until thickened. Serve over rice. 12 min.</em>
+
+<hr>
+
+<h3>DAY 12 — Friday (Week 2)</h3>
+
+<strong>Breakfast: Bagel with Cream Cheese and Smoked Salmon</strong>
+<ul>
+<li>1 everything bagel, toasted</li>
+<li>2 tbsp cream cheese</li>
+<li>3 oz smoked salmon</li>
+<li>Capers, red onion slices, fresh dill (optional)</li>
+</ul>
+
+<em>Toast bagel. Spread cream cheese. Layer salmon, capers, onion, dill. 3 min.</em>
+
+<strong>Lunch: Turkey Chili</strong> (From meal prep or quick stovetop)
+<ul>
+<li>1 lb ground turkey (makes ~3 servings, save leftovers)</li>
+<li>1 can diced tomatoes</li>
+<li>1 can kidney beans, drained</li>
+<li>1/2 onion, diced</li>
+<li>2 cloves garlic</li>
+<li>2 tbsp chili powder, 1 tsp cumin</li>
+<li>Salt, pepper</li>
+</ul>
+
+<em>Brown turkey with onion and garlic (5 min). Add tomatoes, beans, spices. Simmer 15 min. If from meal prep: microwave 3 min. Serve with shredded cheese and sour cream.</em>
+
+<strong>Dinner: Grilled Steak with Baked Potato and Caesar Salad</strong>
+<ul>
+<li>8 oz ribeye or NY strip</li>
+<li>Salt, pepper (generous, 30 min before cooking)</li>
+<li>1 large russet potato</li>
+<li>Butter, sour cream for potato</li>
+<li>Romaine, Caesar dressing, Parmesan, croutons</li>
+</ul>
+
+<em>Microwave potato 5 min, then bake at 400F for 15 min while heating skillet/grill. Sear steak: 4 min per side for medium (adjust for thickness). Let rest 5 min. Toss salad. Total: 25 min.</em>
+
+<hr>
+
+<h3>DAY 13 — Saturday (Week 2)</h3>
+
+<strong>Breakfast: Huevos Rancheros</strong>
+<ul>
+<li>2 eggs</li>
+<li>1/2 cup black beans (canned, rinsed)</li>
+<li>2 corn tortillas</li>
+<li>1/4 cup salsa</li>
+<li>1/4 avocado, sliced</li>
+<li>Shredded cheese, hot sauce, cilantro</li>
+</ul>
+
+<em>Heat beans in small pot. Warm tortillas in dry skillet. Fry eggs in butter. Layer: tortillas, beans, eggs, salsa, avocado, cheese, hot sauce. 10 min.</em>
+
+<strong>Lunch: Pulled Chicken Sandwich</strong>
+<ul>
+<li>1 cup shredded chicken (from meal prep — just fork-shred a breast)</li>
+<li>2 tbsp BBQ sauce</li>
+<li>1 brioche bun</li>
+<li>Coleslaw (cabbage mix, mayo, vinegar, S&P)</li>
+</ul>
+
+<em>Toss shredded chicken with BBQ sauce, microwave 1 min. Toast bun. Assemble with coleslaw on top. 5 min.</em>
+
+<strong>Dinner: Shrimp Scampi with Linguine</strong>
+<ul>
+<li>8 oz shrimp, peeled and deveined</li>
+<li>8 oz linguine</li>
+<li>4 cloves garlic, minced</li>
+<li>1/4 cup white wine (or chicken broth)</li>
+<li>2 tbsp butter</li>
+<li>1 tbsp olive oil</li>
+<li>Red pepper flakes</li>
+<li>Fresh parsley, lemon juice</li>
+<li>Garlic bread: baguette slices with garlic butter, broiled 2 min</li>
+</ul>
+
+<em>Boil linguine. While cooking: heat olive oil + butter, sauté garlic 30 sec, add shrimp, cook 2 min per side. Add wine/broth, lemon juice, red pepper flakes. Toss with drained pasta and parsley. Make garlic bread under broiler. 18 min.</em>
+
+<hr>
+
+<h3>DAY 14 — Sunday (Week 2) — Meal Prep Day</h3>
+
+<strong>Breakfast: Waffles with Fruit and Yogurt</strong>
+<ul>
+<li>2 waffles (frozen or from batter: 1 cup flour, 1 egg, 3/4 cup milk, 2 tbsp melted butter, 1 tsp baking powder)</li>
+<li>1/2 cup Greek yogurt</li>
+<li>Mixed fruit (strawberries, blueberries, banana)</li>
+<li>Maple syrup</li>
+</ul>
+
+<em>Toast frozen waffles or cook batter in waffle iron. Top with yogurt, fruit, drizzle of syrup. 5-10 min.</em>
+
+<strong>Brunch/Lunch: Grilled Cheese and Tomato Soup</strong>
+<ul>
+<li>2 slices sourdough</li>
+<li>2 slices cheddar (or American)</li>
+<li>1 tbsp butter</li>
+<li>1 can tomato soup (prepared per instructions)</li>
+</ul>
+
+<em>Heat soup. Butter bread outsides. Assemble sandwich with cheese. Grill in skillet 2-3 min per side until golden and melty. 10 min.</em>
+
+<strong>Dinner: Slow Cooker Chicken Curry</strong> (Goes in during meal prep)
+<ul>
+<li>1.5 lbs chicken thighs (boneless, skinless)</li>
+<li>1 can (14 oz) coconut milk</li>
+<li>3 tbsp curry paste (red or yellow)</li>
+<li>1 onion, diced</li>
+<li>1 bell pepper, diced</li>
+<li>1 cup frozen peas (add last 30 min)</li>
+<li>1 tbsp fish sauce (optional)</li>
+<li>Jasmine rice</li>
+</ul>
+
+<em>Place chicken, coconut milk, curry paste, onion, pepper, and fish sauce in slow cooker. Cook LOW 6-8 hours or HIGH 3-4 hours. Shred chicken. Add peas last 30 min. Serve over rice. Leftovers for multiple lunches. 5 min active prep.</em>
+
+<hr>
+
+<h2>Sunday Meal Prep Guide</h2>
+
+<h3>What to Prep (covers Mon-Fri lunches + speeds up dinners)</h3>
+
+<strong>Proteins (choose 2-3):</strong>
+<ul>
+<li>Grill or bake 2 lbs chicken breast (season half with fajita spice, half with garlic/herb)</li>
+<li>Cook 1 lb ground beef or turkey with basic seasoning</li>
+<li>Bake salmon fillets if on sale</li>
+</ul>
+
+<strong>Grains (choose 2):</strong>
+<ul>
+<li>Cook 4 cups brown rice or jasmine rice</li>
+<li>Cook 2 cups quinoa</li>
+</ul>
+
+<strong>Vegetables:</strong>
+<ul>
+<li>Chop bell peppers, onions, broccoli, carrots — store in containers</li>
+<li>Roast 2 sheet pans of mixed vegetables (Brussels sprouts, sweet potatoes, zucchini)</li>
+<li>Wash and dry salad greens</li>
+</ul>
+
+<strong>Extras:</strong>
+<ul>
+<li>Hard-boil 6 eggs (snacks and salad toppings)</li>
+<li>Portion out snack bags: almonds, trail mix, cut fruit</li>
+<li>Make overnight oats for Wednesday (Week 2)</li>
+<li>Prep any marinades for the week</li>
+</ul>
+
+<h3>Storage</h3>
+<ul>
+<li>Proteins: up to 4 days in fridge, freeze the rest</li>
+<li>Rice/quinoa: 5 days in fridge, freezes well</li>
+<li>Chopped raw veggies: 5-7 days in airtight containers</li>
+<li>Roasted veggies: 4 days in fridge</li>
+</ul>
+
+<hr>
+
+<h2>Grocery List Template (Per Week)</h2>
+
+<h3>Proteins</h3>
+<ul>
+<li>2 lbs chicken breast</li>
+<li>1 lb ground beef or turkey</li>
+<li>12 oz salmon (2 fillets)</li>
+<li>8 oz shrimp</li>
+<li>1 dozen eggs</li>
+<li>Deli turkey (1/2 lb)</li>
+<li>2 pork chops</li>
+<li>1 steak (8-12 oz)</li>
+</ul>
+
+<h3>Grains & Carbs</h3>
+<ul>
+<li>Brown rice or jasmine rice (2 lb bag)</li>
+<li>Quinoa (1 lb bag)</li>
+<li>Whole wheat bread</li>
+<li>Tortillas (flour and corn)</li>
+<li>Pasta (1 lb)</li>
+<li>Oats (rolled)</li>
+<li>Bagels or English muffins</li>
+</ul>
+
+<h3>Vegetables</h3>
+<ul>
+<li>Broccoli (2 heads)</li>
+<li>Bell peppers (4, mixed colors)</li>
+<li>Sweet potatoes (3)</li>
+<li>Russet potatoes (5 lb bag)</li>
+<li>Asparagus (1 bunch)</li>
+<li>Green beans (1 lb)</li>
+<li>Onions (3)</li>
+<li>Garlic (1 head)</li>
+<li>Mixed salad greens (1 bag)</li>
+<li>Roma or cherry tomatoes</li>
+<li>Avocados (3)</li>
+<li>Carrots</li>
+<li>Celery</li>
+<li>Bok choy or cabbage</li>
+</ol>
+
+<h3>Fruit</h3>
+<ul>
+<li>Bananas (6-7)</li>
+<li>Mixed berries (fresh or frozen)</li>
+<li>Apples (4)</li>
+<li>Lemons (3)</li>
+<li>Limes (2)</li>
+</ul>
+
+<h3>Dairy</h3>
+<ul>
+<li>Greek yogurt (32 oz)</li>
+<li>Shredded cheddar cheese</li>
+<li>Cream cheese</li>
+<li>Butter</li>
+<li>Milk</li>
+<li>Parmesan</li>
+<li>Sour cream</li>
+</ul>
+
+<h3>Pantry (restock as needed)</h3>
+<ul>
+<li>Olive oil, sesame oil, vegetable oil</li>
+<li>Soy sauce, Worcestershire sauce</li>
+<li>BBQ sauce, marinara sauce, teriyaki sauce</li>
+<li>Honey, maple syrup</li>
+<li>Protein powder</li>
+<li>Almonds, walnuts, trail mix</li>
+<li>Rice cakes</li>
+<li>Granola</li>
+<li>Chia seeds</li>
+<li>Canned: diced tomatoes, kidney beans, black beans, coconut milk, tuna</li>
+<li>Spices: cumin, chili powder, paprika, garlic powder, oregano, thyme, cinnamon, curry paste</li>
+<li>Chicken/beef broth</li>
+<li>Taco seasoning, fajita seasoning (or make from bulk spices)</li>
+</ol>
+
+<hr>
+
+<h2>Weekly Tracking</h2>
+
+<p>Use this to check off daily:</p>
+
+<pre><code>Week of: ___________
+
+<p>         Mon  Tue  Wed  Thu  Fri  Sat  Sun</p>
+<p>Wake 6:15 [ ]  [ ]  [ ]  [ ]  [ ]  ---  ---</p>
+<p>Prayer    [ ]  [ ]  [ ]  [ ]  [ ]  [ ]  [ ]</p>
+<p>AM Yoga   [ ]  [ ]  [ ]  [ ]  [ ]  [ ]  [ ]</p>
+<p>Reading   [ ]  [ ]  [ ]  [ ]  [ ]  [ ]  [ ]</p>
+<p>Trading   [ ]  [ ]  [ ]  [ ]  [ ]  ---  ---</p>
+<p>Coding    [ ]  [ ]  [ ]  [ ]  [ ]  [ ]  ---</p>
+<p>Workout   [ ]  [ ]  [ ]  [ ]  [ ]  [ ]  ---</p>
+<p>PM Yoga   [ ]  [ ]  [ ]  [ ]  [ ]  [ ]  [ ]</p>
+<p>Mkt Anlys [ ]  ---  [ ]  [ ]  [ ]  [ ]  [ ]</p>
+<p>Bed 9:45  [ ]  [ ]  [ ]  [ ]  [ ]  [ ]  [ ]</p>
+<p>No Scroll [ ]  [ ]  [ ]  [ ]  [ ]  [ ]  [ ]</code></pre></p>
+
+<hr>
+
+<blockquote><strong>Remember:</strong> This schedule is a tool, not a prison. If something isn't working, adjust it.<br>But give it at least 2 full weeks before changing anything. Discipline precedes motivation.</blockquote>
+
+<hr>
+
+<h2>Sunday Shopping Trip (Week 1 & Week 2)</h2>
+
+<strong>When:</strong> Sunday, 1:00 PM (before meal prep)
+<strong>Duration:</strong> ~45 minutes
+<strong>Location:</strong> Your preferred grocery store
+
+<hr>
+
+<h2>Complete 2-Week Shopping List</h2>
+
+<blockquote>This list covers all 14 days of the meal plan. Shop once per week or do one big haul at the start.</blockquote>
+
+<hr>
+
+<h3>PROTEINS</h3>
+
+<strong>Chicken</strong>
+<ul>
+<li>[ ] Chicken breasts — 4 lbs (for meal prep, fajitas, stir-fry, wraps, lettuce wraps)</li>
+<li>[ ] Bone-in chicken thighs — 4 pieces (BBQ dinner, Week 1)</li>
+<li>[ ] Boneless skinless chicken thighs — 1.5 lbs (slow cooker curry, Week 2)</li>
+<li>[ ] Ground chicken — 6 oz (lettuce wraps)</li>
+</ul>
+
+<strong>Beef</strong>
+<ul>
+<li>[ ] Lean ground beef — 2 lbs (tacos, sloppy joes, beef & broccoli base)</li>
+<li>[ ] Chuck roast — 2-3 lbs (slow cooker pot roast)</li>
+<li>[ ] Sirloin steak — 8 oz (steak strips with quinoa)</li>
+<li>[ ] Flank steak or sirloin — 8 oz (beef & broccoli)</li>
+<li>[ ] Ribeye or NY strip — 8 oz (Friday steak dinner)</li>
+</ul>
+
+<strong>Pork</strong>
+<ul>
+<li>[ ] Boneless pork chops — 2 (about 10 oz total)</li>
+<li>[ ] Breakfast sausage — 1 link or 3 oz ground</li>
+</ul>
+
+<strong>Seafood</strong>
+<ul>
+<li>[ ] Salmon fillets — 4 (6 oz each, for 2 salmon dinners)</li>
+<li>[ ] Shrimp, peeled and deveined — 1.5 lbs (rice bowl + scampi)</li>
+<li>[ ] Smoked salmon — 3 oz (bagel breakfast)</li>
+</ul>
+
+<strong>Turkey</strong>
+<ul>
+<li>[ ] Ground turkey — 2 lbs (pasta sauce, sloppy joes, chili)</li>
+<li>[ ] Deli turkey — 1 lb (wraps, sandwiches)</li>
+</ul>
+
+<strong>Eggs & Dairy Proteins</strong>
+<ul>
+<li>[ ] Eggs — 3 dozen (breakfast, baking, meal prep hard-boiled)</li>
+</ul>
+
+<hr>
+
+<h3>DAIRY</h3>
+
+<ul>
+<li>[ ] Butter — 2 sticks (unsalted preferred)</li>
+<li>[ ] Milk — 1 gallon (oatmeal, smoothies, baking)</li>
+<li>[ ] Greek yogurt, plain — 32 oz container</li>
+<li>[ ] Shredded cheddar cheese — 16 oz bag</li>
+<li>[ ] Shredded mozzarella — 8 oz bag (meatball sub)</li>
+<li>[ ] Parmesan cheese — 4 oz (wedge or shredded)</li>
+<li>[ ] Cream cheese — 8 oz block</li>
+<li>[ ] Sour cream — 16 oz container</li>
+</ul>
+
+<hr>
+
+<h3>GRAINS & BREAD</h3>
+
+<strong>Rice & Grains</strong>
+<ul>
+<li>[ ] Brown rice — 2 lb bag</li>
+<li>[ ] Jasmine rice — 2 lb bag</li>
+<li>[ ] Quinoa — 1 lb bag</li>
+<li>[ ] Rolled oats — 42 oz container</li>
+<li>[ ] Penne pasta — 1 lb box</li>
+<li>[ ] Linguine — 8 oz box</li>
+</ul>
+
+<strong>Bread & Tortillas</strong>
+<ul>
+<li>[ ] Whole wheat bread — 1 loaf</li>
+<li>[ ] Sourdough bread — 1 loaf</li>
+<li>[ ] Brioche or Texas toast — 1 loaf (French toast + bun)</li>
+<li>[ ] Large flour tortillas — 8 count (wraps, burritos)</li>
+<li>[ ] Small flour tortillas — 8 count (fajitas, tacos)</li>
+<li>[ ] Corn tortillas — 8 count (tacos, huevos rancheros)</li>
+<li>[ ] Everything bagels — 2</li>
+<li>[ ] Hoagie rolls — 2</li>
+<li>[ ] Whole wheat hamburger buns — 4</li>
+</ul>
+
+<hr>
+
+<h3>VEGETABLES</h3>
+
+<strong>Fresh</strong>
+<ul>
+<li>[ ] Broccoli — 3 heads</li>
+<li>[ ] Bell peppers (mixed colors) — 6</li>
+<li>[ ] Sweet potatoes — 4</li>
+<li>[ ] Russet potatoes — 6 large</li>
+<li>[ ] Red potatoes — 6 medium</li>
+<li>[ ] Asparagus — 1 bunch</li>
+<li>[ ] Green beans — 2 lbs</li>
+<li>[ ] Yellow onions — 5</li>
+<li>[ ] Red onion — 1 small</li>
+<li>[ ] Garlic — 2 heads</li>
+<li>[ ] Mixed salad greens — 2 bags (10 oz each)</li>
+<li>[ ] Romaine lettuce — 2 hearts</li>
+<li>[ ] Butter lettuce — 1 head (lettuce wraps)</li>
+<li>[ ] Spinach — 1 bag (6 oz)</li>
+<li>[ ] Cherry tomatoes — 2 pints</li>
+<li>[ ] Roma tomatoes — 4</li>
+<li>[ ] Avocados — 5</li>
+<li>[ ] Carrots — 1 lb bag</li>
+<li>[ ] Celery — 1 bunch</li>
+<li>[ ] Baby bok choy — 4 pieces</li>
+<li>[ ] Shredded cabbage/coleslaw mix — 2 bags (14 oz each)</li>
+<li>[ ] Brussels sprouts — 1 lb</li>
+<li>[ ] Snap peas — 8 oz</li>
+<li>[ ] Fresh ginger — 1 small piece</li>
+<li>[ ] Fresh parsley — 1 bunch</li>
+<li>[ ] Fresh dill — 1 small bunch</li>
+<li>[ ] Fresh cilantro — 1 bunch</li>
+<li>[ ] Green onions — 2 bunches</li>
+</ol>
+
+<strong>Frozen</strong>
+<ul>
+<li>[ ] Frozen hash browns — 1 bag (optional backup)</li>
+<li>[ ] Frozen edamame — 1 bag (10 oz)</li>
+<li>[ ] Frozen peas — 1 bag (10 oz, for curry)</li>
+<li>[ ] Frozen corn — 1 bag (or 4 ears fresh)</li>
+<li>[ ] Frozen stir-fry vegetables — 1 bag (backup)</li>
+</ul>
+
+<hr>
+
+<h3>FRUIT</h3>
+
+<strong>Fresh</strong>
+<ul>
+<li>[ ] Bananas — 10-12</li>
+<li>[ ] Apples — 4</li>
+<li>[ ] Lemons — 5</li>
+<li>[ ] Limes — 3</li>
+<li>[ ] Strawberries — 1 lb</li>
+<li>[ ] Blueberries — 1 pint</li>
+</ul>
+
+<strong>Frozen</strong>
+<ul>
+<li>[ ] Frozen mixed berries — 2 bags (12 oz each)</li>
+</ul>
+
+<hr>
+
+<h3>CANNED & JARRED</h3>
+
+<ul>
+<li>[ ] Canned diced tomatoes — 2 cans (14 oz)</li>
+<li>[ ] Canned kidney beans — 1 can (15 oz)</li>
+<li>[ ] Canned black beans — 2 cans (15 oz)</li>
+<li>[ ] Canned tuna — 1 can (5 oz)</li>
+<li>[ ] Canned coconut milk — 1 can (14 oz)</li>
+<li>[ ] Canned tomato soup — 1 can</li>
+<li>[ ] Marinara sauce — 1 jar (24 oz)</li>
+<li>[ ] BBQ sauce — 1 bottle (18 oz)</li>
+<li>[ ] Teriyaki sauce — 1 bottle</li>
+<li>[ ] Soy sauce — 1 bottle (if low)</li>
+<li>[ ] Oyster sauce — 1 small bottle</li>
+<li>[ ] Worcestershire sauce — 1 bottle (if low)</li>
+<li>[ ] Salsa — 1 jar (16 oz)</li>
+<li>[ ] Hot sauce — 1 bottle (if low)</li>
+<li>[ ] Sriracha — 1 bottle (if low)</li>
+<li>[ ] Beef broth — 2 cups (1 can or carton)</li>
+<li>[ ] Chicken broth — 2 cups (backup for wine)</li>
+<li>[ ] Capers — 1 small jar</li>
+</ol>
+
+<hr>
+
+<h3>PANTRY STAPLES</h3>
+
+<strong>Oils & Vinegars</strong>
+<ul>
+<li>[ ] Olive oil (check supply)</li>
+<li>[ ] Sesame oil — 1 small bottle</li>
+<li>[ ] Vegetable oil (check supply)</li>
+<li>[ ] Apple cider vinegar</li>
+<li>[ ] Rice vinegar</li>
+<li>[ ] Balsamic vinaigrette dressing — 1 bottle</li>
+</ul>
+
+<strong>Baking & Sweeteners</strong>
+<ul>
+<li>[ ] Honey — 1 bottle</li>
+<li>[ ] Maple syrup — 1 bottle</li>
+<li>[ ] Brown sugar</li>
+<li>[ ] Powdered sugar</li>
+<li>[ ] All-purpose flour</li>
+<li>[ ] Baking powder</li>
+<li>[ ] Vanilla extract</li>
+<li>[ ] Cornstarch</li>
+</ul>
+
+<strong>Nuts & Seeds</strong>
+<ul>
+<li>[ ] Almonds — 1 lb bag</li>
+<li>[ ] Walnuts — 8 oz bag</li>
+<li>[ ] Trail mix — 1 bag</li>
+<li>[ ] Chia seeds — 1 bag</li>
+<li>[ ] Sesame seeds — 1 small jar</li>
+</ul>
+
+<strong>Other Pantry</strong>
+<ul>
+<li>[ ] Protein powder (vanilla) — check supply</li>
+<li>[ ] Granola — 1 bag (12 oz)</li>
+<li>[ ] Peanut butter — 1 jar</li>
+<li>[ ] Rice cakes — 1 package</li>
+<li>[ ] Caesar dressing — 1 bottle</li>
+<li>[ ] Mayo — 1 jar</li>
+<li>[ ] Dijon mustard</li>
+<li>[ ] Yellow mustard</li>
+<li>[ ] Ketchup</li>
+<li>[ ] Croutons — 1 bag</li>
+<li>[ ] Water chestnuts — 1 can (8 oz)</li>
+<li>[ ] Dates — small package (morning snacks)</li>
+</ol>
+
+<hr>
+
+<h3>SPICES & SEASONINGS</h3>
+
+<em>Check supply and restock as needed:</em>
+<ul>
+<li>[ ] Salt (kosher preferred)</li>
+<li>[ ] Black pepper</li>
+<li>[ ] Garlic powder</li>
+<li>[ ] Onion powder</li>
+<li>[ ] Paprika</li>
+<li>[ ] Smoked paprika</li>
+<li>[ ] Cumin</li>
+<li>[ ] Chili powder</li>
+<li>[ ] Dried oregano</li>
+<li>[ ] Dried thyme</li>
+<li>[ ] Cinnamon</li>
+<li>[ ] Red pepper flakes</li>
+<li>[ ] Taco seasoning packets — 2</li>
+<li>[ ] Fajita seasoning packet — 1</li>
+<li>[ ] Onion soup mix packet — 1</li>
+<li>[ ] Curry paste (red or yellow) — 1 jar</li>
+<li>[ ] Fish sauce — 1 small bottle (optional for curry)</li>
+</ol>
+
+<hr>
+
+<h3>FREEZER SECTION</h3>
+
+<ul>
+<li>[ ] Frozen waffles — 1 box (or make fresh)</li>
+<li>[ ] Frozen meatballs — 1 bag (12 oz)</li>
+</ul>
+
+<hr>
+
+<h3>ALCOHOL (Optional)</h3>
+
+<ul>
+<li>[ ] White wine — 1 small bottle (for shrimp scampi, can sub chicken broth)</li>
+</ul>
+
+<hr>
+
+<h3>WEEKLY BREAKDOWN</h3>
+
+<strong>Week 1 Priority Items:</strong>
+<ul>
+<li>Chuck roast, pork chops, salmon x2, shrimp</li>
+<li>Ground beef, deli turkey</li>
+<li>Brioche bread, hoagie rolls</li>
+<li>Fresh broccoli, asparagus, corn</li>
+</ul>
+
+<strong>Week 2 Priority Items:</strong>
+<ul>
+<li>Chicken thighs (boneless), ground turkey, smoked salmon</li>
+<li>Ribeye steak, flank steak</li>
+<li>Everything bagels, linguine</li>
+<li>Bok choy, Brussels sprouts, butter lettuce</li>
+</ul>
+
+<hr>
+
+<h3>SHOPPING TIPS</h3>
+
+<ol>
+<li><strong>Buy proteins in bulk</strong> — portion and freeze what you won't use within 3-4 days</li>
+<li><strong>Check pantry first</strong> — cross off spices and oils you already have</li>
+<li><strong>Fresh produce timing</strong> — buy Week 2 produce mid-week or get heartier veggies that last</li>
+<li><strong>Prep the list</strong> — organize by store section to save time</li>
+<li><strong>Stick to the list</strong> — no impulse buys. Discipline starts at the grocery store.</li>
+</ol>
+
+            </div>
+        </div>
+
+        <footer>
+            <p>Last synced: 2026-02-06 13:12:10</p>
+        </footer>
+    </div>
+    <script src="calendar_export.js"></script>
+</body>
+</html>
