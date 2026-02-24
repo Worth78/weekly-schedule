@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Schedule — Disciplined Trader's Life</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  /* ── Theme Variables ── */
+  :root {
+    --transition-speed: 0.4s;
+  }
+
+  [data-theme="dark"] {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-sidebar: rgba(10, 10, 20, 0.95);
+    --bg-card: rgba(255, 255, 255, 0.04);
+    --bg-card-hover: rgba(255, 255, 255, 0.08);
+    --text-primary: #e8e8f0;
+    --text-secondary: #a0a0b8;
+    --text-muted: #6a6a80;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-glow: rgba(255, 255, 255, 0.15);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --code-bg: rgba(255, 255, 255, 0.06);
+    --table-stripe: rgba(255, 255, 255, 0.03);
+    --sidebar-active-bg: rgba(255, 255, 255, 0.08);
+    --overlay: rgba(0, 0, 0, 0.6);
+    --glow-opacity: 1;
+  }
+
+  [data-theme="light"] {
+    --bg-primary: #f0f0f8;
+    --bg-secondary: #ffffff;
+    --bg-sidebar: rgba(255, 255, 255, 0.95);
+    --bg-card: rgba(0, 0, 0, 0.03);
+    --bg-card-hover: rgba(0, 0, 0, 0.06);
+    --text-primary: #1a1a2e;
+    --text-secondary: #4a4a60;
+    --text-muted: #8888a0;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --border-glow: rgba(0, 0, 0, 0.15);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --code-bg: rgba(0, 0, 0, 0.05);
+    --table-stripe: rgba(0, 0, 0, 0.03);
+    --sidebar-active-bg: rgba(0, 0, 0, 0.06);
+    --overlay: rgba(255, 255, 255, 0.3);
+    --glow-opacity: 0.5;
+  }
+
+  /* ── Keyframes ── */
+  @keyframes rainbowShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.4; }
+    50%      { opacity: 0.8; }
+  }
+
+  @keyframes slideInLeft {
+    from { transform: translateX(-30px); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+  }
+
+  @keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes borderDance {
+    0%   { border-image-source: linear-gradient(0deg, #ff0080, #ff8c00, #40e0d0, #8a2be2); }
+    25%  { border-image-source: linear-gradient(90deg, #ff8c00, #40e0d0, #8a2be2, #ff0080); }
+    50%  { border-image-source: linear-gradient(180deg, #40e0d0, #8a2be2, #ff0080, #ff8c00); }
+    75%  { border-image-source: linear-gradient(270deg, #8a2be2, #ff0080, #ff8c00, #40e0d0); }
+    100% { border-image-source: linear-gradient(360deg, #ff0080, #ff8c00, #40e0d0, #8a2be2); }
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  /* ── Reset & Base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    transition: background var(--transition-speed), color var(--transition-speed);
+    overflow-x: hidden;
+  }
+
+  /* ── Background Orbs ── */
+  .bg-orbs {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    opacity: var(--glow-opacity);
+  }
+  .bg-orbs .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    animation: pulse-glow 6s ease-in-out infinite;
+  }
+  .bg-orbs .orb:nth-child(1) {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(255, 0, 128, 0.15), transparent 70%);
+    top: -100px; left: -100px;
+    animation-delay: 0s;
+  }
+  .bg-orbs .orb:nth-child(2) {
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0, 200, 255, 0.12), transparent 70%);
+    top: 40%; right: -150px;
+    animation-delay: 2s;
+  }
+  .bg-orbs .orb:nth-child(3) {
+    width: 450px; height: 450px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.12), transparent 70%);
+    bottom: -80px; left: 30%;
+    animation-delay: 4s;
+  }
+  .bg-orbs .orb:nth-child(4) {
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(255, 140, 0, 0.1), transparent 70%);
+    top: 20%; left: 50%;
+    animation-delay: 1s;
+  }
+
+  /* ── Layout ── */
+  .layout {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Sidebar ── */
+  .sidebar {
+    width: 280px;
+    min-width: 280px;
+    background: var(--bg-sidebar);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background var(--transition-speed);
+    overflow-y: auto;
+  }
+
+  .sidebar-header {
+    padding: 24px 20px 16px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .sidebar-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ff0080, #ff8c00, #40e0d0, #8a2be2);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: rainbowShift 4s ease infinite;
+  }
+
+  .sidebar-subtitle {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── Theme Toggle ── */
+  .theme-toggle-wrap {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s;
+    user-select: none;
+  }
+  .theme-toggle:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-glow);
+  }
+
+  .toggle-track {
+    width: 44px;
+    height: 24px;
+    border-radius: 12px;
+    position: relative;
+    background: linear-gradient(135deg, #1a1a2e, #2d2d44);
+    transition: background 0.3s;
+    flex-shrink: 0;
+  }
+  [data-theme="light"] .toggle-track {
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+  }
+
+  .toggle-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+  [data-theme="light"] .toggle-thumb {
+    transform: translateX(20px);
+  }
+
+  .toggle-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  .toggle-icon {
+    font-size: 16px;
+  }
+
+  /* ── Nav Menu ── */
+  .nav-menu {
+    flex: 1;
+    padding: 12px 0;
+    list-style: none;
+  }
+
+  .nav-section-label {
+    padding: 12px 20px 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .nav-item {
+    display: block;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 128, 0.05), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .nav-link:hover {
+    color: var(--text-primary);
+    background: var(--sidebar-active-bg);
+  }
+  .nav-link:hover::before {
+    opacity: 1;
+  }
+  .nav-link.active {
+    color: #ff0080;
+    border-left-color: #ff0080;
+    background: var(--sidebar-active-bg);
+  }
+
+  .nav-icon {
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .nav-badge {
+    margin-left: auto;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff0080, #8a2be2);
+    color: #fff;
+  }
+
+  /* ── Sidebar Footer ── */
+  .sidebar-footer {
+    padding: 16px 20px;
+    border-top: 1px solid var(--border-color);
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+  }
+  .sidebar-footer a {
+    color: #ff0080;
+    text-decoration: none;
+  }
+  .sidebar-footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* ── Mobile Hamburger ── */
+  .hamburger {
+    display: none;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 200;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--bg-sidebar);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--overlay);
+    z-index: 90;
+  }
+
+  @media (max-width: 900px) {
+    .hamburger { display: flex; }
+    .sidebar { transform: translateX(-100%); }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-overlay.open { display: block; }
+    .main-content { margin-left: 0 !important; }
+  }
+
+  /* ── Main Content ── */
+  .main-content {
+    margin-left: 280px;
+    flex: 1;
+    padding: 40px 50px 80px;
+    max-width: 900px;
+    min-width: 0;
+  }
+
+  /* ── Hero Section ── */
+  .hero {
+    text-align: center;
+    padding: 60px 0 50px;
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, rgba(255, 0, 128, 0.15), rgba(138, 43, 226, 0.15));
+    border: 1px solid rgba(255, 0, 128, 0.3);
+    color: #ff0080;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #ff0080, #ff8c00, #ffea00, #40e0d0, #8a2be2, #ff0080);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: rainbowShift 6s ease infinite;
+  }
+
+  .hero p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* ── Section Styles ── */
+  .section {
+    margin-bottom: 50px;
+    animation: fadeInUp 0.6s ease-out;
+    scroll-margin-top: 20px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0, #8a2be2, transparent) 1;
+  }
+
+  .section-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .section-icon.pink    { background: linear-gradient(135deg, rgba(255,0,128,0.2), rgba(255,0,128,0.05)); }
+  .section-icon.orange  { background: linear-gradient(135deg, rgba(255,140,0,0.2), rgba(255,140,0,0.05)); }
+  .section-icon.cyan    { background: linear-gradient(135deg, rgba(64,224,208,0.2), rgba(64,224,208,0.05)); }
+  .section-icon.purple  { background: linear-gradient(135deg, rgba(138,43,226,0.2), rgba(138,43,226,0.05)); }
+  .section-icon.green   { background: linear-gradient(135deg, rgba(0,255,136,0.2), rgba(0,255,136,0.05)); }
+  .section-icon.yellow  { background: linear-gradient(135deg, rgba(255,234,0,0.2), rgba(255,234,0,0.05)); }
+  .section-icon.blue    { background: linear-gradient(135deg, rgba(0,136,255,0.2), rgba(0,136,255,0.05)); }
+
+  .section-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff0080, #ff8c00, #40e0d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Cards ── */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0, #8a2be2);
+    background-size: 300% 100%;
+    animation: rainbowShift 4s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-glow);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px var(--shadow-color);
+  }
+  .card:hover::before {
+    opacity: 1;
+  }
+
+  .card-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card p, .card li {
+    color: var(--text-secondary);
+    font-size: 14px;
+  }
+
+  /* ── Accordion (collapsible sections) ── */
+  .accordion {
+    margin-bottom: 12px;
+  }
+
+  .accordion-trigger {
+    width: 100%;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px 20px;
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+  }
+  .accordion-trigger:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-glow);
+  }
+  .accordion-trigger .arrow {
+    margin-left: auto;
+    transition: transform 0.3s;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .accordion-trigger.open {
+    border-radius: 12px 12px 0 0;
+    border-bottom-color: transparent;
+  }
+  .accordion-trigger.open .arrow {
+    transform: rotate(180deg);
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+  }
+  .accordion-content.open {
+    max-height: 600px;
+  }
+  .accordion-content-inner {
+    padding: 16px 20px 20px;
+  }
+
+  /* ── Ordered Lists ── */
+  .steps {
+    list-style: none;
+    counter-reset: step;
+  }
+  .steps li {
+    counter-increment: step;
+    padding: 10px 0 10px 48px;
+    position: relative;
+    color: var(--text-secondary);
+    font-size: 14px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .steps li:last-child { border-bottom: none; }
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0; top: 10px;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff0080, #8a2be2);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── Link Buttons ── */
+  .link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+    margin: 6px 6px 6px 0;
+  }
+  .link-btn.rainbow {
+    background: linear-gradient(135deg, #ff0080, #ff8c00, #40e0d0, #8a2be2);
+    background-size: 300% 300%;
+    color: #fff;
+    animation: rainbowShift 4s ease infinite;
+  }
+  .link-btn.rainbow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(255, 0, 128, 0.4);
+  }
+  .link-btn.outline {
+    border-color: var(--border-glow);
+    color: var(--text-primary);
+    background: var(--bg-card);
+  }
+  .link-btn.outline:hover {
+    background: var(--bg-card-hover);
+    border-color: #ff0080;
+    transform: translateY(-2px);
+  }
+
+  /* ── Code Inline ── */
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: var(--code-bg);
+    border: 1px solid var(--border-color);
+    color: #ff8c00;
+  }
+
+  /* ── Code Block ── */
+  .code-block {
+    background: var(--code-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 12px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #40e0d0;
+    overflow-x: auto;
+    position: relative;
+  }
+  .code-block .copy-btn {
+    position: absolute;
+    top: 8px; right: 8px;
+    background: var(--bg-card-hover);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+  .code-block .copy-btn:hover {
+    color: var(--text-primary);
+    border-color: #ff0080;
+  }
+
+  /* ── Table ── */
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    font-size: 13px;
+  }
+  .styled-table th {
+    background: linear-gradient(135deg, rgba(255,0,128,0.1), rgba(138,43,226,0.1));
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border-color);
+  }
+  .styled-table td {
+    padding: 10px 16px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+  }
+  .styled-table tr:nth-child(even) td {
+    background: var(--table-stripe);
+  }
+  .styled-table tr:hover td {
+    background: var(--bg-card-hover);
+  }
+  .styled-table td code {
+    font-size: 12px;
+  }
+
+  /* ── Info Box ── */
+  .info-box {
+    padding: 16px 20px;
+    border-radius: 12px;
+    border-left: 4px solid;
+    margin: 16px 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+  .info-box.tip  { border-color: #40e0d0; background: rgba(64,224,208,0.06); }
+  .info-box.warn { border-color: #ff8c00; background: rgba(255,140,0,0.06); }
+  .info-box.info { border-color: #8a2be2; background: rgba(138,43,226,0.06); }
+
+  /* ── Workflow Steps ── */
+  .workflow {
+    position: relative;
+    padding-left: 30px;
+  }
+  .workflow::before {
+    content: '';
+    position: absolute;
+    left: 14px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #ff0080, #ff8c00, #40e0d0, #8a2be2);
+  }
+  .workflow-step {
+    position: relative;
+    padding: 12px 0 12px 24px;
+    color: var(--text-secondary);
+    font-size: 14px;
+  }
+  .workflow-step::before {
+    content: '';
+    position: absolute;
+    left: -22px; top: 18px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff0080, #8a2be2);
+    border: 2px solid var(--bg-primary);
+  }
+
+  /* ── Scroll to top ── */
+  .scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff0080, #8a2be2);
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 50;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(255, 0, 128, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .scroll-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .scroll-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(255, 0, 128, 0.6);
+  }
+
+  /* ── Bold / Strong ── */
+  strong, b {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  /* ── Links ── */
+  .content-link {
+    color: #ff0080;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .content-link:hover {
+    color: #ff8c00;
+    text-decoration: underline;
+  }
+
+  /* ── Observed Sections Animation ── */
+  .observe-me {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .observe-me.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .main-content {
+      padding: 80px 20px 60px;
+    }
+    .hero { padding: 30px 0 30px; }
+    .hero h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Background Orbs -->
+<div class="bg-orbs">
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+</div>
+
+<!-- Mobile Hamburger -->
+<button class="hamburger" id="hamburger" aria-label="Toggle menu">
+  <span></span><span></span><span></span>
+</button>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- Layout -->
+<div class="layout">
+
+  <!-- ════════ SIDEBAR ════════ -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">Weekly Schedule</div>
+      <div class="sidebar-subtitle">Disciplined Trader's Life</div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle-wrap">
+      <div class="theme-toggle" id="themeToggle" role="button" tabindex="0" aria-label="Toggle theme">
+        <span class="toggle-icon" id="themeIcon">&#127769;</span>
+        <div class="toggle-track">
+          <div class="toggle-thumb"></div>
+        </div>
+        <span class="toggle-label" id="themeLabel">Dark Mode</span>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <ul class="nav-menu">
+      <li class="nav-section-label">Overview</li>
+      <li class="nav-item"><a href="#overview" class="nav-link active"><span class="nav-icon">&#128200;</span> Overview</a></li>
+      <li class="nav-item"><a href="#live-schedule" class="nav-link"><span class="nav-icon">&#127760;</span> Live Schedule</a></li>
+
+      <li class="nav-section-label">iPhone</li>
+      <li class="nav-item"><a href="#iphone-setup" class="nav-link"><span class="nav-icon">&#128241;</span> iPhone Setup <span class="nav-badge">3</span></a></li>
+      <li class="nav-item"><a href="#remove-readd" class="nav-link"><span class="nav-icon">&#128260;</span> Remove & Re-Add</a></li>
+
+      <li class="nav-section-label">Project</li>
+      <li class="nav-item"><a href="#files" class="nav-link"><span class="nav-icon">&#128193;</span> Files</a></li>
+      <li class="nav-item"><a href="#workflow" class="nav-link"><span class="nav-icon">&#128736;</span> Update Workflow</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      Built with &#10024; by <a href="https://worth78.github.io/weekly-schedule/" target="_blank" rel="noopener">worth78</a>
+    </div>
+  </nav>
+
+  <!-- ════════ MAIN CONTENT ════════ -->
+  <main class="main-content">
+
+    <!-- Hero -->
+    <div class="hero" id="overview">
+      <div class="hero-badge">&#9889; Disciplined Trading</div>
+      <h1>Weekly Schedule</h1>
+      <p>A comprehensive weekly lifestyle schedule for a disciplined options trader. Covers Monday&ndash;Sunday in 5&ndash;15 minute blocks with trading, coding, workouts, meal plans, and routines.</p>
+    </div>
+
+    <!-- ── Live Schedule ── -->
+    <section class="section observe-me" id="live-schedule">
+      <div class="section-header">
+        <div class="section-icon pink">&#127760;</div>
+        <h2>Live Schedule</h2>
+      </div>
+      <div class="card">
+        <p style="margin-bottom:16px;">Access the live schedule in your browser or subscribe via the ICS calendar file:</p>
+        <a href="https://worth78.github.io/weekly-schedule/weekly_schedule.html" target="_blank" rel="noopener" class="link-btn rainbow">&#128196; HTML Schedule</a>
+        <a href="https://worth78.github.io/weekly-schedule/weekly_schedule.ics" target="_blank" rel="noopener" class="link-btn outline">&#128197; ICS Calendar</a>
+      </div>
+    </section>
+
+    <!-- ── iPhone Setup ── -->
+    <section class="section observe-me" id="iphone-setup">
+      <div class="section-header">
+        <div class="section-icon orange">&#128241;</div>
+        <h2>iPhone Setup</h2>
+      </div>
+
+      <!-- One-Tap -->
+      <div class="accordion">
+        <button class="accordion-trigger open" data-accordion="tap">
+          <span>&#9889;</span> One-Tap Subscribe (Easiest)
+          <span class="arrow">&#9660;</span>
+        </button>
+        <div class="accordion-content open" id="acc-tap">
+          <div class="accordion-content-inner">
+            <ol class="steps">
+              <li>Visit the <a href="https://worth78.github.io/weekly-schedule/weekly_schedule.html" target="_blank" class="content-link">live schedule</a> on your iPhone</li>
+              <li>Tap the green <strong>Subscribe to Calendar</strong> button</li>
+              <li>Confirm in the Calendar dialog that appears</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- QR Code -->
+      <div class="accordion">
+        <button class="accordion-trigger" data-accordion="qr">
+          <span>&#128247;</span> QR Code
+          <span class="arrow">&#9660;</span>
+        </button>
+        <div class="accordion-content" id="acc-qr">
+          <div class="accordion-content-inner">
+            <ol class="steps">
+              <li>Open your iPhone camera</li>
+              <li>Point it at the QR code on the schedule page</li>
+              <li>Tap the notification to subscribe</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Manual -->
+      <div class="accordion">
+        <button class="accordion-trigger" data-accordion="manual">
+          <span>&#9881;&#65039;</span> Manual Setup
+          <span class="arrow">&#9660;</span>
+        </button>
+        <div class="accordion-content" id="acc-manual">
+          <div class="accordion-content-inner">
+            <ol class="steps">
+              <li>Open the <strong>Calendar</strong> app</li>
+              <li>Tap <strong>Calendars</strong> &gt; <strong>Add Calendar</strong> &gt; <strong>Add Subscription Calendar</strong></li>
+              <li>Paste: <code>https://worth78.github.io/weekly-schedule/weekly_schedule.ics</code></li>
+              <li>Tap <strong>Find</strong> &gt; <strong>Done</strong></li>
+            </ol>
+            <div class="info-box tip" style="margin-top:12px;">Calendar auto-refreshes when the schedule is updated and pushed.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Remove & Re-Add ── -->
+    <section class="section observe-me" id="remove-readd">
+      <div class="section-header">
+        <div class="section-icon cyan">&#128260;</div>
+        <h2>Remove & Re-Add Calendar</h2>
+      </div>
+
+      <!-- Remove -->
+      <div class="accordion">
+        <button class="accordion-trigger open" data-accordion="remove">
+          <span>&#10060;</span> Remove (Unsubscribe)
+          <span class="arrow">&#9660;</span>
+        </button>
+        <div class="accordion-content open" id="acc-remove">
+          <div class="accordion-content-inner">
+            <p style="margin-bottom:10px;color:var(--text-muted);font-size:13px;">Use this when you're on vacation, taking a break, or don't need the schedule notifications for a while.</p>
+            <ol class="steps">
+              <li>Open the <strong>Calendar</strong> app</li>
+              <li>Tap <strong>Calendars</strong> at the bottom</li>
+              <li>Find <strong>"Weekly Schedule"</strong> under the Subscribed section</li>
+              <li>Tap the <strong>(i)</strong> next to it</li>
+              <li>Scroll down and tap <strong>Unsubscribe</strong></li>
+              <li>Confirm when prompted</li>
+            </ol>
+            <div class="info-box info" style="margin-top:12px;">All schedule events and notifications are removed immediately. No data is lost &mdash; the calendar lives on GitHub Pages and can be re-added anytime.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Re-Add -->
+      <div class="accordion">
+        <button class="accordion-trigger" data-accordion="readd">
+          <span>&#10004;&#65039;</span> Re-Add (Re-Subscribe)
+          <span class="arrow">&#9660;</span>
+        </button>
+        <div class="accordion-content" id="acc-readd">
+          <div class="accordion-content-inner">
+            <p style="margin-bottom:10px;color:var(--text-muted);font-size:13px;">When you're ready to get back on the schedule:</p>
+            <ol class="steps">
+              <li>Visit the <a href="https://worth78.github.io/weekly-schedule/weekly_schedule.html" target="_blank" class="content-link">live schedule</a> on your iPhone</li>
+              <li>Tap the green <strong>Subscribe to Calendar</strong> button</li>
+              <li>Confirm in the Calendar dialog</li>
+            </ol>
+            <p style="margin-top:10px;font-size:13px;color:var(--text-muted);">Or scan the QR code on the page with your iPhone camera.</p>
+            <div class="info-box tip" style="margin-top:12px;">All events and reminders are back instantly. The calendar auto-syncs whenever the schedule is updated.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Files ── -->
+    <section class="section observe-me" id="files">
+      <div class="section-header">
+        <div class="section-icon purple">&#128193;</div>
+        <h2>Files</h2>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden;">
+        <table class="styled-table">
+          <thead>
+            <tr><th>File</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>weekly_schedule.md</code></td><td>Master schedule (source of truth)</td></tr>
+            <tr><td><code>weekly_schedule.html</code></td><td>Styled HTML view with subscribe panel + QR code</td></tr>
+            <tr><td><code>weekly_schedule.ics</code></td><td>iCalendar file for Apple Calendar</td></tr>
+            <tr><td><code>generate_ics.py</code></td><td>Regenerates .ics from code</td></tr>
+            <tr><td><code>calendar_export.js</code></td><td>In-browser .ics download + subscribe link</td></tr>
+            <tr><td><code>sync_schedule.py</code></td><td>File watcher: MD changes auto-update HTML</td></tr>
+            <tr><td><code>start_sync.bat</code></td><td>One-click launcher for sync watcher</td></tr>
+            <tr><td><code>iphone_integration.md</code></td><td>Full iPhone integration guide</td></tr>
+            <tr><td><code>prompt.md</code></td><td>Schedule context and preferences</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── Workflow ── -->
+    <section class="section observe-me" id="workflow">
+      <div class="section-header">
+        <div class="section-icon green">&#128736;</div>
+        <h2>Update Workflow</h2>
+      </div>
+      <div class="card">
+        <div class="workflow">
+          <div class="workflow-step">Edit <code>weekly_schedule.md</code></div>
+          <div class="workflow-step">Run: <code>python sync_schedule.py --once</code> <span style="color:var(--text-muted);font-size:12px;">(regenerates HTML)</span></div>
+          <div class="workflow-step">Run: <code>python generate_ics.py</code> <span style="color:var(--text-muted);font-size:12px;">(regenerates ICS)</span></div>
+          <div class="workflow-step"><code>git add . && git commit -m "Update schedule" && git push</code></div>
+          <div class="workflow-step">iPhone picks up changes within 24 hours</div>
+        </div>
+        <div class="info-box warn" style="margin-top:16px;">&#9888;&#65039; Always regenerate both HTML <em>and</em> ICS before pushing to keep everything in sync.</div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Scroll to Top -->
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">&#8593;</button>
+
+<script>
+(function() {
+  // ── Theme Toggle ──
+  const html = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+  const icon = document.getElementById('themeIcon');
+  const label = document.getElementById('themeLabel');
+
+  function setTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    if (theme === 'dark') {
+      icon.innerHTML = '&#127769;';
+      label.textContent = 'Dark Mode';
+    } else {
+      icon.innerHTML = '&#9728;&#65039;';
+      label.textContent = 'Light Mode';
+    }
+  }
+
+  const saved = localStorage.getItem('theme') || 'dark';
+  setTheme(saved);
+
+  toggle.addEventListener('click', function() {
+    setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  });
+  toggle.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle.click(); }
+  });
+
+  // ── Accordion ──
+  document.querySelectorAll('.accordion-trigger').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const key = btn.getAttribute('data-accordion');
+      const content = document.getElementById('acc-' + key);
+      const isOpen = btn.classList.contains('open');
+      if (isOpen) {
+        btn.classList.remove('open');
+        content.classList.remove('open');
+        content.style.maxHeight = '0';
+      } else {
+        btn.classList.add('open');
+        content.classList.add('open');
+        content.style.maxHeight = content.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Init open accordions
+  document.querySelectorAll('.accordion-content.open').forEach(function(el) {
+    el.style.maxHeight = el.scrollHeight + 'px';
+  });
+
+  // ── Active Nav on Scroll ──
+  const sections = document.querySelectorAll('.section, .hero');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  function updateActive() {
+    let current = '';
+    sections.forEach(function(sec) {
+      const top = sec.getBoundingClientRect().top;
+      if (top < 150) current = sec.getAttribute('id');
+    });
+    navLinks.forEach(function(link) {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+
+  // Close sidebar on nav click (mobile)
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('open');
+      hamburger.classList.remove('open');
+    });
+  });
+
+  // ── Mobile Menu ──
+  const hamburger = document.getElementById('hamburger');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+
+  hamburger.addEventListener('click', function() {
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('open');
+    hamburger.classList.toggle('open');
+  });
+  overlay.addEventListener('click', function() {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('open');
+    hamburger.classList.remove('open');
+  });
+
+  // ── Scroll to Top ──
+  const scrollBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', function() {
+    scrollBtn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+  scrollBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // ── Intersection Observer for fade-in ──
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.observe-me').forEach(function(el) { obs.observe(el); });
+  } else {
+    document.querySelectorAll('.observe-me').forEach(function(el) { el.classList.add('visible'); });
+  }
+
+  // ── Copy Buttons ──
+  document.querySelectorAll('.code-block .copy-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const code = btn.parentElement.querySelector('code') || btn.parentElement;
+      const text = code.textContent.replace('Copy', '').trim();
+      navigator.clipboard.writeText(text).then(function() {
+        btn.textContent = 'Copied!';
+        setTimeout(function() { btn.textContent = 'Copy'; }, 1500);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

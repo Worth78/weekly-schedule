@@ -5,20 +5,23 @@ claude-smart   # "Debug why my 0DTE bot double-enters positions"
 claude-max     # "Analyze my entire codebase and optimize the backtesting system"
 
 I made some changes in the code.  Please
- PUSH ALL CHANGES TO GITHUB. Make sure you push all 
+use agent "C:\Users\worth\.claude\agents\git-agent.md" 
+to PUSH ALL CHANGES TO GIT.  Make sure you push all 
 changes, as I've had other conversations going on 
 with different AIs.
+
+Zip project with zip agent: 
+"C:\Users\worth\.claude\agents\zip-agent.md"
 
 We do not yet have a git repo for this algorithm.  
 Use agent "C:\Users\worth\.claude\agents\git-agent.md" to 
 Set up GIT.
 
+
 Zip project with zip agent: "C:\Users\worth\.claude\agents\zip-agent.md"
 
 codex
 npm install -g @openai/codex@latest
-
-
 
 Do not summarize. Expand every point with implementation details, edge cases, historical context, and failure
 modes. Prioritize completeness over conciseness.
