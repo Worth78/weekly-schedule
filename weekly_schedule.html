@@ -342,68 +342,90 @@
             body {
                 background: white !important;
                 color: black !important;
+                font-size: 11pt !important;
             }
 
             .container {
                 padding: 0 !important;
+                max-width: 100% !important;
             }
 
-            header {
-                color: black !important;
-                padding: 10px 0 !important;
-                margin-bottom: 10px !important;
-            }
-
-            header h1 {
-                font-size: 1.5rem !important;
-                text-shadow: none !important;
-                color: black !important;
-            }
-
-            /* Hide non-schedule elements */
-            header > div, /* button container */
+            /* Hide everything by default */
+            header,
             .subscribe-panel,
             .philosophy,
-            .no-print {
+            .card-body > * {
+                display: none !important;
+            }
+
+            /* Show only the daily schedules */
+            .card-body > #print-schedules,
+            .card-body > #print-schedules * {
+                display: revert !important;
+            }
+
+            /* Hide the section heading and hrs inside print area */
+            #print-schedules > h2,
+            #print-schedules > hr {
                 display: none !important;
             }
 
             .card {
                 box-shadow: none !important;
-                border: 1px solid #ccc !important;
-                break-inside: avoid;
-                margin-bottom: 15px !important;
+                border: none !important;
+                margin: 0 !important;
+                overflow: visible !important;
             }
 
             .card-header {
-                background: #eee !important;
-                color: black !important;
-                padding: 10px 15px !important;
-                font-size: 1.1rem !important;
+                display: none !important;
             }
 
             .card-body {
-                padding: 15px !important;
+                padding: 0 !important;
             }
 
-            h2, h3, h4 {
+            /* Each day on its own page */
+            .day-schedule {
+                page-break-before: always;
+                padding: 0;
+            }
+
+            .day-schedule:first-child {
+                page-break-before: avoid;
+            }
+
+            .day-schedule h3 {
                 color: black !important;
+                font-size: 14pt !important;
+                margin: 0 0 8px 0 !important;
+                padding-bottom: 4px !important;
+                border-bottom: 2px solid #333 !important;
             }
 
-            h2 {
-                border-bottom-color: #999 !important;
+            .day-schedule blockquote {
+                border-left: 3px solid #999 !important;
+                background: #f5f5f5 !important;
+                margin: 5px 0 !important;
+                padding: 5px 10px !important;
+                font-size: 9pt !important;
             }
 
+            /* Compact tables */
             table {
-                font-size: 0.8rem !important;
+                font-size: 9pt !important;
+                width: 100% !important;
+                border-collapse: collapse !important;
             }
 
             th {
                 background: #eee !important;
                 color: black !important;
+                padding: 4px 8px !important;
             }
 
-            td, th {
+            td {
+                padding: 3px 8px !important;
                 border-color: #ccc !important;
             }
 
@@ -412,14 +434,13 @@
                 color: black !important;
             }
 
+            div[style*="overflow-x"] {
+                overflow: visible !important;
+            }
+
             a {
                 color: black !important;
                 text-decoration: none !important;
-            }
-
-            blockquote {
-                border-left-color: #999 !important;
-                background: #f5f5f5 !important;
             }
         }
 
@@ -578,8 +599,11 @@
 
 <h2>Detailed Daily Schedules</h2>
 
+<div id="print-schedules">
+
 <hr>
 
+<div class="day-schedule">
 <h3>MONDAY — Light Training Day (Home)</h3>
 
 <div style="overflow-x: auto;"><table>
@@ -623,9 +647,11 @@
 <tr><td>9:35</td><td>Brush teeth + bed prep</td><td>Brush, floss. Set alarm.</td></tr>
 <tr><td><strong>9:45</strong></td><td><strong>LIGHTS OUT</strong></td><td>No exceptions. 9+ hours of sleep. Trading edge starts here.</td></tr>
 </tbody></table></div>
+</div>
 
 <hr>
 
+<div class="day-schedule">
 <h3>TUESDAY — Light-Moderate Leg Day (Home) + Algo Class</h3>
 
 <blockquote><strong>Note:</strong> Algo class 6:00-10:00 PM. Dinner is early. Evening routine compressed.</blockquote>
@@ -667,9 +693,11 @@
 <tr><td>10:20</td><td>Brush teeth + bed prep</td><td></td></tr>
 <tr><td><strong>10:30</strong></td><td><strong>LIGHTS OUT</strong></td><td>~8.5 hrs tonight. Good recovery for Wednesday.</td></tr>
 </tbody></table></div>
+</div>
 
 <hr>
 
+<div class="day-schedule">
 <h3>WEDNESDAY — Moderate Upper (Commercial Gym)</h3>
 
 <div style="overflow-x: auto;"><table>
@@ -714,9 +742,11 @@
 <tr><td>9:35</td><td>Brush teeth + bed prep</td><td></td></tr>
 <tr><td><strong>9:45</strong></td><td><strong>LIGHTS OUT</strong></td><td>8.5 hours. Recovering from Tuesday's late night.</td></tr>
 </tbody></table></div>
+</div>
 
 <hr>
 
+<div class="day-schedule">
 <h3>THURSDAY — Moderate-Heavy Full Body (Home)</h3>
 
 <div style="overflow-x: auto;"><table>
@@ -760,9 +790,11 @@
 <tr><td>9:35</td><td>Brush teeth + bed prep</td><td></td></tr>
 <tr><td><strong>9:45</strong></td><td><strong>LIGHTS OUT</strong></td><td>8.5 hours. Fully rested for Friday's heavy lifting.</td></tr>
 </tbody></table></div>
+</div>
 
 <hr>
 
+<div class="day-schedule">
 <h3>FRIDAY — Heavy Lower + Pulls (Commercial Gym)</h3>
 
 <div style="overflow-x: auto;"><table>
@@ -807,9 +839,11 @@
 <tr><td>9:35</td><td>Brush teeth + bed prep</td><td></td></tr>
 <tr><td><strong>9:45</strong></td><td><strong>LIGHTS OUT</strong></td><td>8.5 hours. Rested for Saturday's peak training.</td></tr>
 </tbody></table></div>
+</div>
 
 <hr>
 
+<div class="day-schedule">
 <h3>SATURDAY — Peak Training Day (Commercial Gym)</h3>
 
 <blockquote><strong>No market today.</strong> Sleep 45 min later. Gym is the main event. Coding and personal projects fill the day.</blockquote>
@@ -851,9 +885,11 @@
 <tr><td>9:35</td><td>Brush teeth + bed prep</td><td></td></tr>
 <tr><td><strong>9:45</strong></td><td><strong>LIGHTS OUT</strong></td><td>9+ hours sleep tonight (wake 7:00). Maximum recovery after peak day.</td></tr>
 </tbody></table></div>
+</div>
 
 <hr>
 
+<div class="day-schedule">
 <h3>SUNDAY — Rest Day + Church + Meal Prep</h3>
 
 <blockquote><strong>No workout. No trading. Recharge the body and mind. Prepare for the week.</strong></blockquote>
@@ -900,6 +936,8 @@
 <tr><td>9:35</td><td>Brush teeth + bed prep</td><td></td></tr>
 <tr><td><strong>9:45</strong></td><td><strong>LIGHTS OUT</strong></td><td>9+ hours to 7:00 AM. Start the week rested and sharp.</td></tr>
 </tbody></table></div>
+</div>
+</div><!-- end print-schedules -->
 
 <hr>
 
