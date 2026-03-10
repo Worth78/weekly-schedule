@@ -350,23 +350,8 @@
                 max-width: 100% !important;
             }
 
-            /* Hide everything by default */
             header,
-            .subscribe-panel,
-            .philosophy,
-            .card-body > * {
-                display: none !important;
-            }
-
-            /* Show only the daily schedules */
-            .card-body > #print-schedules,
-            .card-body > #print-schedules * {
-                display: revert !important;
-            }
-
-            /* Hide the section heading and hrs inside print area */
-            #print-schedules > h2,
-            #print-schedules > hr {
+            .subscribe-panel {
                 display: none !important;
             }
 
@@ -383,6 +368,28 @@
 
             .card-body {
                 padding: 0 !important;
+            }
+
+            /* Hide everything that isn't the daily schedules */
+            .card-body > h1,
+            .card-body > blockquote,
+            .card-body > hr,
+            .card-body > h2,
+            .card-body > ol,
+            .card-body > p,
+            .card-body > em,
+            .card-body > strong,
+            .card-body > ul,
+            .card-body > pre,
+            .card-body > h3,
+            .card-body > h4,
+            .card-body > div:not(#print-schedules) {
+                display: none !important;
+            }
+
+            #print-schedules > h2,
+            #print-schedules > hr {
+                display: none !important;
             }
 
             /* Each day on its own page */
