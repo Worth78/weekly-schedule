@@ -338,6 +338,91 @@
             display: block;
         }
 
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+            }
+
+            .container {
+                padding: 0 !important;
+            }
+
+            header {
+                color: black !important;
+                padding: 10px 0 !important;
+                margin-bottom: 10px !important;
+            }
+
+            header h1 {
+                font-size: 1.5rem !important;
+                text-shadow: none !important;
+                color: black !important;
+            }
+
+            /* Hide non-schedule elements */
+            header > div, /* button container */
+            .subscribe-panel,
+            .philosophy,
+            .no-print {
+                display: none !important;
+            }
+
+            .card {
+                box-shadow: none !important;
+                border: 1px solid #ccc !important;
+                break-inside: avoid;
+                margin-bottom: 15px !important;
+            }
+
+            .card-header {
+                background: #eee !important;
+                color: black !important;
+                padding: 10px 15px !important;
+                font-size: 1.1rem !important;
+            }
+
+            .card-body {
+                padding: 15px !important;
+            }
+
+            h2, h3, h4 {
+                color: black !important;
+            }
+
+            h2 {
+                border-bottom-color: #999 !important;
+            }
+
+            table {
+                font-size: 0.8rem !important;
+            }
+
+            th {
+                background: #eee !important;
+                color: black !important;
+            }
+
+            td, th {
+                border-color: #ccc !important;
+            }
+
+            .highlight-trading, .highlight-coding {
+                background: #eee !important;
+                color: black !important;
+            }
+
+            a {
+                color: black !important;
+                text-decoration: none !important;
+            }
+
+            blockquote {
+                border-left-color: #999 !important;
+                background: #f5f5f5 !important;
+            }
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 1.8rem;

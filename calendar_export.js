@@ -180,8 +180,24 @@ document.addEventListener('DOMContentLoaded', function() {
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         `;
 
+        const printBtn = document.createElement('button');
+        printBtn.textContent = 'Print Schedule';
+        printBtn.onclick = function() { window.print(); };
+        printBtn.style.cssText = `
+            background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        `;
+
         btnContainer.appendChild(downloadBtn);
         btnContainer.appendChild(subscribeLink);
+        btnContainer.appendChild(printBtn);
         header.appendChild(btnContainer);
     }
 });
